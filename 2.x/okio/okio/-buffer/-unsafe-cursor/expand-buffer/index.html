@@ -354,8 +354,7 @@
                 
                 <p><a href="../../../../">okio</a> / <a href="../../../">okio</a> / <a href="../../">Buffer</a> / <a href="../">UnsafeCursor</a> / <a href="./">expandBuffer</a></p>
 <h1 id="expandbuffer">expandBuffer<a class="headerlink" href="#expandbuffer" title="Permanent link">&para;</a></h1>
-<p><code>fun expandBuffer(minByteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>fun expandBuffer(minByteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
 <p>Grow the buffer by adding a <strong>contiguous range</strong> of capacity in a single segment. This adds
 at least <code>minByteCount</code> bytes but may add up to a full segment of additional capacity.</p>
 <p>As a side-effect this cursor will <a href="../seek/">seek</a>. It will move

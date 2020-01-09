@@ -594,13 +594,13 @@ and ready to solve new problems.</p>
 straightforward API:</p>
 <ul>
 <li>
-<p><a href="https://square.github.io/okio/2.x/okio/jvm/okio/-byte-string/index.html"><strong>ByteString</strong></a> is an immutable sequence of bytes. For character data, <code>String</code>
+<p><a href="https://square.github.io/okio/2.x/okio/okio/-byte-string/index.html"><strong>ByteString</strong></a> is an immutable sequence of bytes. For character data, <code>String</code>
    is fundamental. <code>ByteString</code> is String&rsquo;s long-lost brother, making it easy to
    treat binary data as a value. This class is ergonomic: it knows how to encode
    and decode itself as hex, base64, and UTF-8.</p>
 </li>
 <li>
-<p><a href="https://square.github.io/okio/2.x/okio/jvm/okio/-buffer/index.html"><strong>Buffer</strong></a> is a mutable sequence of bytes. Like <code>ArrayList</code>, you don&rsquo;t need
+<p><a href="https://square.github.io/okio/2.x/okio/okio/-buffer/index.html"><strong>Buffer</strong></a> is a mutable sequence of bytes. Like <code>ArrayList</code>, you don&rsquo;t need
    to size your buffer in advance. You read and write buffers as a queue: write
    data to the end and read it from the front. There&rsquo;s no obligation to manage
    positions, limits, or capacities.</p>
@@ -617,7 +617,7 @@ thread without any copying or ceremony.</p>
 <h2 id="sources-and-sinks">Sources and Sinks<a class="headerlink" href="#sources-and-sinks" title="Permanent link">&para;</a></h2>
 <p>An elegant part of the <code>java.io</code> design is how streams can be layered for
 transformations like encryption and compression. Okio includes its own stream
-types called <a href="https://square.github.io/okio/2.x/okio/jvm/okio/-source/index.html"><code>Source</code></a> and <a href="https://square.github.io/okio/2.x/okio/jvm/okio/-sink/index.html"><code>Sink</code></a> that work like <code>InputStream</code> and
+types called <a href="https://square.github.io/okio/2.x/okio/okio/-source/index.html"><code>Source</code></a> and <a href="https://square.github.io/okio/2.x/okio/okio/-sink/index.html"><code>Sink</code></a> that work like <code>InputStream</code> and
 <code>OutputStream</code>, but with some key differences:</p>
 <ul>
 <li>
@@ -633,7 +633,7 @@ types called <a href="https://square.github.io/okio/2.x/okio/jvm/okio/-source/in
 <li>
 <p><strong>Easy to use.</strong> Although <em>implementations</em> of <code>Source</code> and <code>Sink</code> have only
    three methods to write, <em>callers</em> are given a rich API with the
-   <a href="https://square.github.io/okio/2.x/okio/jvm/okio/-buffered-source/index.html"><code>BufferedSource</code></a> and <a href="https://square.github.io/okio/2.x/okio/jvm/okio/-buffered-sink/index.html"><code>BufferedSink</code></a> interfaces. These interfaces give you
+   <a href="https://square.github.io/okio/2.x/okio/okio/-buffered-source/index.html"><code>BufferedSource</code></a> and <a href="https://square.github.io/okio/2.x/okio/okio/-buffered-sink/index.html"><code>BufferedSink</code></a> interfaces. These interfaces give you
    everything you need in one place.</p>
 </li>
 <li>
@@ -660,7 +660,7 @@ Okio’s implementation language from Java to Kotlin.</p>
 <p>We&rsquo;ve written some recipes that demonstrate how to solve common problems with
 Okio. Read through them to learn about how everything works together.
 Cut-and-paste these examples freely; that&rsquo;s what they&rsquo;re for.</p>
-<h3 id="read-a-text-file-line-by-line"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/ReadFileLineByLine.java">Read a text file line-by-line</a><a class="headerlink" href="#read-a-text-file-line-by-line" title="Permanent link">&para;</a></h3>
+<h3 id="read-a-text-file-line-by-line"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/ReadFileLineByLine.java">Read a text file line-by-line</a><a class="headerlink" href="#read-a-text-file-line-by-line" title="Permanent link">&para;</a></h3>
 <p>Use <code>Okio.source(File)</code> to open a source stream to read a file. The returned
 <code>Source</code> interface is very small and has limited uses. Instead we wrap the
 source with a buffer. This has two benefits:</p>
@@ -730,7 +730,7 @@ also permits a byte limit to defend against malformed input.</p>
 <span class="o">}</span>
 </pre></div>
 
-<h3 id="write-a-text-file"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/WriteFile.java">Write a text file</a><a class="headerlink" href="#write-a-text-file" title="Permanent link">&para;</a></h3>
+<h3 id="write-a-text-file"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/WriteFile.java">Write a text file</a><a class="headerlink" href="#write-a-text-file" title="Permanent link">&para;</a></h3>
 <p>Above we used a <code>Source</code> and a <code>BufferedSource</code> to read a file. To write, we use
 a <code>Sink</code> and a <code>BufferedSink</code>. The advantages of buffering are the same: a more
 capable API and better performance.</p>
@@ -773,7 +773,7 @@ garbage collect a temporary string.</p>
 <div class="codehilite"><pre><span></span><span class="n">sink</span><span class="o">.</span><span class="na">writeUtf8</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span> <span class="c1">// Slower!</span>
 </pre></div>
 
-<h3 id="utf-8"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/ExploreCharsets.java">UTF-8</a><a class="headerlink" href="#utf-8" title="Permanent link">&para;</a></h3>
+<h3 id="utf-8"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/ExploreCharsets.java">UTF-8</a><a class="headerlink" href="#utf-8" title="Permanent link">&para;</a></h3>
 <p>In the above APIs you can see that Okio really likes UTF-8. Early computer
 systems suffered many incompatible character encodings: ISO-8859-1, ShiftJIS,
 ASCII, EBCDIC, etc. Writing software to support multiple character sets was
@@ -844,7 +844,7 @@ UTF-8 without actually encoding it. This is handy in length-prefixed encodings
 like protocol buffers.</p>
 <p>Use <code>BufferedSource.readUtf8CodePoint()</code> to read a single variable-length code
 point, and <code>BufferedSink.writeUtf8CodePoint()</code> to write one.</p>
-<h3 id="golden-values"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/GoldenValue.java">Golden Values</a><a class="headerlink" href="#golden-values" title="Permanent link">&para;</a></h3>
+<h3 id="golden-values"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/GoldenValue.java">Golden Values</a><a class="headerlink" href="#golden-values" title="Permanent link">&para;</a></h3>
 <p>Okio likes testing. The library itself is heavily tested, and it has features
 that are often helpful when testing application code. One pattern we’ve found to
 be quite useful is “golden value” testing. The goal of such tests is to confirm
@@ -927,7 +927,7 @@ buffer then consume it using an <code>ObjectInputStream</code>:</p>
 
 <p>With this test we can change the serialization of the <code>Point</code> class without
 breaking compatibility.</p>
-<h3 id="write-a-binary-file"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/BitmapEncoder.java">Write a binary file</a><a class="headerlink" href="#write-a-binary-file" title="Permanent link">&para;</a></h3>
+<h3 id="write-a-binary-file"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/BitmapEncoder.java">Write a binary file</a><a class="headerlink" href="#write-a-binary-file" title="Permanent link">&para;</a></h3>
 <p>Encoding a binary file is not unlike encoding a text file. Okio uses the same
 <code>BufferedSink</code> and <code>BufferedSource</code> bytes for both. This is handy for binary
 formats that include both byte and character data.</p>
@@ -1125,7 +1125,7 @@ zeros to maintain the alignment.</p>
 <li>Use <code>Float.floatToIntBits()</code> and <code>Double.doubleToLongBits()</code> to encode
    floating point values.</li>
 </ul>
-<h3 id="communicate-on-a-socket"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/SocksProxyServer.java">Communicate on a Socket</a><a class="headerlink" href="#communicate-on-a-socket" title="Permanent link">&para;</a></h3>
+<h3 id="communicate-on-a-socket"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/SocksProxyServer.java">Communicate on a Socket</a><a class="headerlink" href="#communicate-on-a-socket" title="Permanent link">&para;</a></h3>
 <p>Sending and receiving data over the network is a bit like writing and reading
 files. We use <code>BufferedSink</code> to encode output and <code>BufferedSource</code> to decode
 input. Like files, network protocols can be text, binary, or a mix of both. But
@@ -1152,7 +1152,7 @@ sources and sinks to immediately fail with an <code>IOException</code>. You can 
 configure timeouts for all socket operations. You don’t need a reference to the
 socket to adjust timeouts: <code>Source</code> and <code>Sink</code> expose timeouts directly. This
 API works even if the streams are decorated.</p>
-<p>As a complete example of networking with Okio we wrote a <a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/SocksProxyServer.java">basic SOCKS
+<p>As a complete example of networking with Okio we wrote a <a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/SocksProxyServer.java">basic SOCKS
 proxy</a> server. Some highlights:</p>
 <div class="codehilite"><pre><span></span><span class="n">Socket</span> <span class="n">fromSocket</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">BufferedSource</span> <span class="n">fromSource</span> <span class="o">=</span> <span class="n">Okio</span><span class="o">.</span><span class="na">buffer</span><span class="o">(</span><span class="n">Okio</span><span class="o">.</span><span class="na">source</span><span class="o">(</span><span class="n">fromSocket</span><span class="o">));</span>
@@ -1215,7 +1215,7 @@ and ints:</p>
 </tbody>
 </table>
 <p>Java has no primitive type that can represent unsigned longs.</p>
-<h3 id="hashing"><a href="https://github.com/square/okio/blob/master/samples/src/main/java/okio/samples/Hashing.java">Hashing</a><a class="headerlink" href="#hashing" title="Permanent link">&para;</a></h3>
+<h3 id="hashing"><a href="https://github.com/square/okio/blob/master/samples/src/jvmMain/java/okio/samples/Hashing.java">Hashing</a><a class="headerlink" href="#hashing" title="Permanent link">&para;</a></h3>
 <p>We’re bombarded by hashing in our lives as Java programmers. Early on we&rsquo;re introduced to the
 <code>hashCode()</code> method, something we know we need to override otherwise unforeseen bad things happen.
 Later we’re shown <code>LinkedHashMap</code> and its friends. These build on that <code>hashCode()</code> method to
@@ -1295,10 +1295,25 @@ System.out.println(&quot;hmacSha256: &quot; + byteString.hmacSha256(secret).hex(
 <code>java.security.MessageDigest</code> for cryptographic hashes and <code>javax.crypto.Mac</code> for HMAC.</p>
 <h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
 <p>Our <a href="http://square.github.io/okio/changelog/">change log</a> has release history.</p>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.squareup.okio:okio:2.4.0&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.squareup.okio:okio:2.4.3&quot;</span><span class="p">)</span>
 </pre></div>
 
-<p>Snapshot builds are <a href="https://oss.sonatype.org/content/repositories/snapshots/">available</a>.</p>
+<details>
+   <summary>Snapshot builds are also available</summary>
+
+<div class="codehilite"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+    <span class="n">maven</span> <span class="p">{</span>
+        <span class="n">url</span> <span class="p">=</span> <span class="n">uri</span><span class="p">(</span><span class="s">&quot;https://oss.sonatype.org/content/repositories/snapshots/&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+   <span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.squareup.okio:okio:2.5.0-SNAPSHOT&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+</details>
+
 <h2 id="r8-proguard">R8 / ProGuard<a class="headerlink" href="#r8-proguard" title="Permanent link">&para;</a></h2>
 <p>If you are using R8 or ProGuard add the options from <a href="https://github.com/square/okio/blob/master/okio/src/jvmMain/resources/META-INF/proguard/okio.pro">this file</a>.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>

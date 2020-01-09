@@ -338,11 +338,19 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">readUtf8CodePoint</a></p>
 <h1 id="readutf8codepoint">readUtf8CodePoint<a class="headerlink" href="#readutf8codepoint" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun readUtf8CodePoint():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8CodePoint():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a>(js)</p>
 <p>Removes and returns a single UTF-8 code point, reading between 1 and 4 bytes as necessary.</p>
 <p>If this source is exhausted before a complete code point can be read, this throws an
-<a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> and consumes no input.</p>
+<a href="#">java.io.EOFException</a> and consumes no input.</p>
+<p>If this source doesn&rsquo;t start with a properly-encoded UTF-8 code point, this method will remove
+1 or more non-UTF-8 bytes and return the replacement character (<code>U+FFFD</code>). This covers encoding
+problems (the input is not properly-encoded UTF-8), characters out of range (beyond the
+0x10ffff limit of Unicode), code points for UTF-16 surrogates (U+d800..U+dfff) and overlong
+encodings (such as <code>0xc080</code> for the NUL character in modified UTF-8).</p>
+<p>(jvm)</p>
+<p>Removes and returns a single UTF-8 code point, reading between 1 and 4 bytes as necessary.</p>
+<p>If this source is exhausted before a complete code point can be read, this throws an
+<a href="https://docs.oracle.com/javase/6/docs/api/java/io/EOFException.html">java.io.EOFException</a> and consumes no input.</p>
 <p>If this source doesn&rsquo;t start with a properly-encoded UTF-8 code point, this method will remove
 1 or more non-UTF-8 bytes and return the replacement character (<code>U+FFFD</code>). This covers encoding
 problems (the input is not properly-encoded UTF-8), characters out of range (beyond the

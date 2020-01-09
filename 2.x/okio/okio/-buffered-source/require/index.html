@@ -338,10 +338,12 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">require</a></p>
 <h1 id="require">require<a class="headerlink" href="#require" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun require(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun require(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a>(js)</p>
 <p>Returns when the buffer contains at least <code>byteCount</code> bytes. Throws an
-<a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the source is exhausted before the required bytes can be read.</p>
+<a href="#">java.io.EOFException</a> if the source is exhausted before the required bytes can be read.</p>
+<p>(jvm)</p>
+<p>Returns when the buffer contains at least <code>byteCount</code> bytes. Throws an
+<a href="https://docs.oracle.com/javase/6/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the source is exhausted before the required bytes can be read.</p>
                 
                   
                 

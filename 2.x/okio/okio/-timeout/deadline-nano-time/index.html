@@ -354,13 +354,11 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Timeout</a> / <a href="./">deadlineNanoTime</a></p>
 <h1 id="deadlinenanotime">deadlineNanoTime<a class="headerlink" href="#deadlinenanotime" title="Permanent link">&para;</a></h1>
-<p><code>open fun deadlineNanoTime():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Returns the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached.</p>
+<p>(jvm) <code>open fun deadlineNanoTime():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
+<p>Returns the <a href="https://docs.oracle.com/javase/6/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached.</p>
 <h3 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h3>
-<p><code>IllegalStateException</code> - if no deadline is set.<code>open fun deadlineNanoTime(deadlineNanoTime:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Timeout</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Sets the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached. All operations must
+<p><code>IllegalStateException</code> - if no deadline is set.(jvm) <code>open fun deadlineNanoTime(deadlineNanoTime:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Timeout</code></a></p>
+<p>Sets the <a href="https://docs.oracle.com/javase/6/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached. All operations must
 complete before this time. Use a deadline to set a maximum bound on the time spent on a
 sequence of operations.</p>
                 

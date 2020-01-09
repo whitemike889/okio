@@ -338,15 +338,13 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">copyTo</a></p>
 <h1 id="copyto">copyTo<a class="headerlink" href="#copyto" title="Permanent link">&para;</a></h1>
-<p><code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p><code>fun copyTo(out:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><code>OutputStream</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= size - offset):</code><a href="../"><code>Buffer</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(js, jvm) <code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a>(native) <code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
 <p>Copy <code>byteCount</code> bytes from this, starting at <code>offset</code>, to <code>out</code>.</p>
-<p><code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L):</code><a href="../"><code>Buffer</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Overload of <a href="./">copyTo</a> with byteCount = size - offset, work around for
+<p>(js, jvm) <code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L):</code><a href="../"><code>Buffer</code></a>(native) <code>fun copyTo(out:</code><a href="../"><code>Buffer</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
+<p>Overload of <a href="./#okio.Buffer$copyTo(okio.Buffer, kotlin.Long, kotlin.Long)">copyTo</a> with byteCount = size - offset, work around for
 <a href="https://youtrack.jetbrains.com/issue/KT-30847">https://youtrack.jetbrains.com/issue/KT-30847</a></p>
+<p>(jvm) <code>@JvmOverloads fun copyTo(out:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html"><code>OutputStream</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= 0L, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>= size - offset):</code><a href="../"><code>Buffer</code></a></p>
+<p>Copy <code>byteCount</code> bytes from this, starting at <code>offset</code>, to <code>out</code>.</p>
                 
                   
                 

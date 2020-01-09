@@ -338,19 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">writeDecimalLong</a></p>
 <h1 id="writedecimallong">writeDecimalLong<a class="headerlink" href="#writedecimallong" title="Permanent link">&para;</a></h1>
-<p><code>fun writeDecimalLong(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/write-decimal-long/">BufferedSink.writeDecimalLong</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes a long to this sink in signed decimal form (i.e., as a string in base 10).</p>
-<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
-buffer.writeDecimalLong(8675309L);
-buffer.writeByte(&#39; &#39;);
-buffer.writeDecimalLong(-123L);
-buffer.writeByte(&#39; &#39;);
-buffer.writeDecimalLong(1L);
-
-assertEquals(&quot;8675309 -123 1&quot;, buffer.readUtf8());
-</pre></div>
+<p>(js, jvm, native) <code>fun writeDecimalLong(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

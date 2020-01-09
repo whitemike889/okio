@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Pipe</a> / <a href="./">&lt;init&gt;</a></p>
 <h1 id="init">&lt;init&gt;<a class="headerlink" href="#init" title="Permanent link">&para;</a></h1>
-<p><code>Pipe(maxBufferSize:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>)</code></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>Pipe(maxBufferSize:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>)</code></p>
 <p>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each
 is accessed by its own thread: a producer thread writes data to the sink and a consumer thread
 reads data from the source.</p>
@@ -347,11 +346,11 @@ reads data from the source.</p>
 size. When a producer thread outruns its consumer the buffer fills up and eventually writes to
 the sink will block until the consumer has caught up. Symmetrically, if a consumer outruns its
 producer reads block until there is data to be read. Limits on the amount of time spent waiting
-for the other party can be configured with <a href="../../-timeout/">timeouts</a> on the source and the
+for the other party can be configured with <a href="../../-timeout/#okio.Timeout">timeouts</a> on the source and the
 sink.</p>
 <p>When the sink is closed, source reads will continue to complete normally until the buffer has
 been exhausted. At that point reads will return -1, indicating the end of the stream. But if the
-source is closed first, writes to the sink will immediately fail with an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">IOException</a>.</p>
+source is closed first, writes to the sink will immediately fail with an <a href="https://docs.oracle.com/javase/6/docs/api/java/io/IOException.html">IOException</a>.</p>
                 
                   
                 

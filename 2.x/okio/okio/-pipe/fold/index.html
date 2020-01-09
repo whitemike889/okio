@@ -338,11 +338,10 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Pipe</a> / <a href="./">fold</a></p>
 <h1 id="fold">fold<a class="headerlink" href="#fold" title="Permanent link">&para;</a></h1>
-<p><code>fun fold(sink:</code><a href="../../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>fun fold(sink:</code><a href="../../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
 <p>Writes any buffered contents of this pipe to <code>sink</code>, then replace this pipe&rsquo;s source with
 <code>sink</code>. This pipe&rsquo;s source is closed and attempts to read it will throw an
-<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html">IllegalStateException</a>.</p>
+<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>.</p>
 <p>This method must not be called while concurrently accessing this pipe&rsquo;s source. It is safe,
 however, to call this while concurrently writing this pipe&rsquo;s sink.</p>
                 

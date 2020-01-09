@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../../">okio</a> / <a href="../../../">okio</a> / <a href="../../">Buffer</a> / <a href="../">UnsafeCursor</a> / <a href="./">&lt;init&gt;</a></p>
 <h1 id="init">&lt;init&gt;<a class="headerlink" href="#init" title="Permanent link">&para;</a></h1>
-<p><code>UnsafeCursor()</code></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>UnsafeCursor()</code></p>
 <p>A handle to the underlying data in a buffer. This handle is unsafe because it does not enforce
 its own invariants. Instead, it assumes a careful user who has studied Okio&rsquo;s implementation
 details and their consequences.</p>
@@ -455,7 +454,7 @@ are no further segments in the buffer.</p>
 <p>Use <a href="../../read-unsafe/">Buffer.readUnsafe</a> to create a cursor to read buffer data and <a href="../../read-and-write-unsafe/">Buffer.readAndWriteUnsafe</a>
 to create a cursor to read and write buffer data. In either case, always call
 <a href="../close/">UnsafeCursor.close</a> when done with a cursor. This is convenient with Kotlin&rsquo;s
-<a href="#">use</a> extension function. In this example we read all of the bytes in a buffer into a byte
+<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/use.html">use</a> extension function. In this example we read all of the bytes in a buffer into a byte
 array:</p>
 <div class="codehilite"><pre><span></span>val bufferBytes = ByteArray(buffer.size.toInt())
 

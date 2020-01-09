@@ -10,4 +10,5 @@ $dokka.location:okio$source(java.io.InputStream)okio/java.io.-input-stream/sour
 $dokka.location:okio$source(java.net.Socket)okio/java.net.-socket/source.md
 $dokka.location:okio$source(java.nio.file.Path, kotlin.Array((java.nio.file.OpenOption)))okio/java.nio.file.-path/source.md
 $dokka.location:okio$utf8Size(kotlin.String, kotlin.Int, kotlin.Int)okio/kotlin.-string/utf8-size.md
+$dokka.location:okio.ArrayIndexOutOfBoundsExceptionokio/-array-index-out-of-bounds-exception/index.md
 okio

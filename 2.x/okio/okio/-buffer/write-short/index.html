@@ -338,21 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">writeShort</a></p>
 <h1 id="writeshort">writeShort<a class="headerlink" href="#writeshort" title="Permanent link">&para;</a></h1>
-<p><code>fun writeShort(s:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/write-short/">BufferedSink.writeShort</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes a big-endian short to this sink using two bytes.</p>
-<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
-buffer.writeShort(32767);
-buffer.writeShort(15);
-
-assertEquals(4, buffer.size());
-assertEquals((byte) 0x7f, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x0f, buffer.readByte());
-assertEquals(0, buffer.size());
-</pre></div>
+<p>(js, jvm, native) <code>fun writeShort(s:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

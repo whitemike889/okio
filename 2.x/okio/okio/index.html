@@ -480,84 +480,92 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-async-timeout/">AsyncTimeout</a><br>(JVM)</td>
-<td><code>open class AsyncTimeout :</code><a href="-timeout/"><code>Timeout</code></a><br>This timeout uses a background thread to take action exactly when the timeout occurs. Use this to implement timeouts where they aren&rsquo;t supported natively, such as to sockets that are blocked on writing.</td>
+<td>(jvm) <a href="--deprecated-okio/">-DeprecatedOkio</a></td>
+<td><code>object ~~-DeprecatedOkio~~</code></td>
 </tr>
 <tr>
-<td><a href="-buffer/">Buffer</a><br>(JVM, js, native)</td>
-<td><code>expect class Buffer :</code><a href="-buffered-source/"><code>BufferedSource</code></a><code>,</code><a href="-buffered-sink/"><code>BufferedSink</code></a><br>A collection of bytes in memory.</td>
+<td>(jvm) <a href="--deprecated-utf8/">-DeprecatedUtf8</a></td>
+<td><code>object ~~-DeprecatedUtf8~~</code></td>
 </tr>
 <tr>
-<td><a href="-buffered-sink/">BufferedSink</a><br>(JVM, js, native)</td>
-<td><code>expect interface BufferedSink :</code><a href="-sink/"><code>Sink</code></a><br>A sink that keeps a buffer internally so that callers can do small writes without a performance penalty.</td>
+<td>(jvm) <a href="-async-timeout/">AsyncTimeout</a></td>
+<td>This timeout uses a background thread to take action exactly when the timeout occurs. Use this to implement timeouts where they aren&rsquo;t supported natively, such as to sockets that are blocked on writing.<code>open class AsyncTimeout :</code><a href="-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="-buffered-source/">BufferedSource</a><br>(JVM, js, native)</td>
-<td><code>expect interface BufferedSource :</code><a href="-source/"><code>Source</code></a><br>A source that keeps a buffer internally so that callers can do small reads without a performance penalty. It also allows clients to read ahead, buffering as much as necessary before consuming input.</td>
+<td>(js, jvm, native) <a href="-buffer/">Buffer</a></td>
+<td>A collection of bytes in memory.<code>class Buffer :</code><a href="-buffered-source/"><code>BufferedSource</code></a><code>,</code><a href="-buffered-sink/"><code>BufferedSink</code></a></td>
 </tr>
 <tr>
-<td><a href="-byte-string/">ByteString</a><br>(JVM, js, native)</td>
-<td><code>open expect class ByteString :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><code>Comparable</code></a><code>&lt;</code><a href="-byte-string/"><code>ByteString</code></a><code>&gt;</code><br>An immutable sequence of bytes.</td>
+<td>(js, jvm, native) <a href="-buffered-sink/">BufferedSink</a></td>
+<td>A sink that keeps a buffer internally so that callers can do small writes without a performance penalty.<code>interface BufferedSink :</code><a href="-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="-deflater-sink/">DeflaterSink</a><br>(JVM)</td>
-<td><code>class DeflaterSink :</code><a href="-sink/"><code>Sink</code></a><br>A sink that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to compress data written to another source.</td>
+<td>(js, jvm, native) <a href="-buffered-source/">BufferedSource</a></td>
+<td>A source that keeps a buffer internally so that callers can do small reads without a performance penalty. It also allows clients to read ahead, buffering as much as necessary before consuming input.<code>interface BufferedSource :</code><a href="-source/"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="-forwarding-sink/">ForwardingSink</a><br>(JVM)</td>
-<td><code>abstract class ForwardingSink :</code><a href="-sink/"><code>Sink</code></a><br>A <a href="-sink/">Sink</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(js, jvm, native) <a href="-byte-string/">ByteString</a></td>
+<td>An immutable sequence of bytes.<code>open class ByteString :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><code>Comparable</code></a><code>&lt;</code><a href="-byte-string/"><code>ByteString</code></a><code>&gt;</code></td>
 </tr>
 <tr>
-<td><a href="-forwarding-source/">ForwardingSource</a><br>(JVM)</td>
-<td><code>abstract class ForwardingSource :</code><a href="-source/"><code>Source</code></a><br>A <a href="-source/">Source</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(jvm) <a href="-deflater-sink/">DeflaterSink</a></td>
+<td>A sink that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to compress data written to another source.<code>class DeflaterSink :</code><a href="-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="-forwarding-timeout/">ForwardingTimeout</a><br>(JVM)</td>
-<td><code>open class ForwardingTimeout :</code><a href="-timeout/"><code>Timeout</code></a><br>A <a href="-timeout/">Timeout</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(jvm) <a href="-forwarding-sink/">ForwardingSink</a></td>
+<td>A <a href="-sink/#okio.Sink">Sink</a> which forwards calls to another. Useful for subclassing.<code>abstract class ForwardingSink :</code><a href="-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="-gzip-sink/">GzipSink</a><br>(JVM)</td>
-<td><code>class GzipSink :</code><a href="-sink/"><code>Sink</code></a><br>A sink that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to compress written data to another sink.</td>
+<td>(jvm) <a href="-forwarding-source/">ForwardingSource</a></td>
+<td>A <a href="-source/#okio.Source">Source</a> which forwards calls to another. Useful for subclassing.<code>abstract class ForwardingSource :</code><a href="-source/"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="-gzip-source/">GzipSource</a><br>(JVM)</td>
-<td><code>class GzipSource :</code><a href="-source/"><code>Source</code></a><br>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.</td>
+<td>(jvm) <a href="-forwarding-timeout/">ForwardingTimeout</a></td>
+<td>A <a href="-timeout/#okio.Timeout">Timeout</a> which forwards calls to another. Useful for subclassing.<code>open class ForwardingTimeout :</code><a href="-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="-hashing-sink/">HashingSink</a><br>(JVM)</td>
-<td><code>class HashingSink :</code><a href="-forwarding-sink/"><code>ForwardingSink</code></a><br>A sink that computes a hash of the full stream of bytes it has accepted. To use, create an instance with your preferred hash algorithm. Write all of the data to the sink and then call <a href="#">hash</a> to compute the final hash value.</td>
+<td>(jvm) <a href="-gzip-sink/">GzipSink</a></td>
+<td>A sink that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to compress written data to another sink.<code>class GzipSink :</code><a href="-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="-hashing-source/">HashingSource</a><br>(JVM)</td>
-<td><code>class HashingSource :</code><a href="-forwarding-source/"><code>ForwardingSource</code></a><br>A source that computes a hash of the full stream of bytes it has supplied. To use, create an instance with your preferred hash algorithm. Exhaust the source by reading all of its bytes and then call <a href="#">hash</a> to compute the final hash value.</td>
+<td>(jvm) <a href="-gzip-source/">GzipSource</a></td>
+<td>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.<code>class GzipSource :</code><a href="-source/"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="-inflater-source/">InflaterSource</a><br>(JVM)</td>
-<td><code>class InflaterSource :</code><a href="-source/"><code>Source</code></a><br>A source that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to decompress data read from another source.</td>
+<td>(jvm) <a href="-hashing-sink/">HashingSink</a></td>
+<td>A sink that computes a hash of the full stream of bytes it has accepted. To use, create an instance with your preferred hash algorithm. Write all of the data to the sink and then call <a href="-hashing-sink/hash/">hash</a> to compute the final hash value.<code>class HashingSink :</code><a href="-forwarding-sink/"><code>ForwardingSink</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="-hashing-source/">HashingSource</a></td>
+<td>A source that computes a hash of the full stream of bytes it has supplied. To use, create an instance with your preferred hash algorithm. Exhaust the source by reading all of its bytes and then call <a href="-hashing-source/hash/">hash</a> to compute the final hash value.<code>class HashingSource :</code><a href="-forwarding-source/"><code>ForwardingSource</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="-inflater-source/">InflaterSource</a></td>
+<td>A source that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to decompress data read from another source.<code>class InflaterSource :</code><a href="-source/"><code>Source</code></a></td>
 </tr>
 <tr>
 <td><a href="-options/">Options</a></td>
-<td><code>class Options</code><br>An indexed set of values that may be read with <a href="-buffered-source/select/">BufferedSource.select</a>.</td>
+<td>An indexed set of values that may be read with <a href="-buffered-source/select/#okio.BufferedSource$select(okio.Options)">BufferedSource.select</a>.(js) <code>class Options :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-abstract-list/index.html"><code>AbstractList</code></a><code>&lt;</code><a href="-byte-string/"><code>ByteString</code></a><code>&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-random-access/index.html"><code>RandomAccess</code></a><br>(jvm) <code>class Options :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-abstract-list/index.html"><code>AbstractList</code></a><code>&lt;</code><a href="-byte-string/"><code>ByteString</code></a><code>&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-random-access.html"><code>RandomAccess</code></a></td>
 </tr>
 <tr>
-<td><a href="-pipe/">Pipe</a><br>(JVM)</td>
-<td><code>class Pipe</code><br>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each is accessed by its own thread: a producer thread writes data to the sink and a consumer thread reads data from the source.</td>
+<td>(jvm) <a href="-pipe/">Pipe</a></td>
+<td>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each is accessed by its own thread: a producer thread writes data to the sink and a consumer thread reads data from the source.<code>class Pipe</code></td>
 </tr>
 <tr>
-<td><a href="-sink/">Sink</a><br>(JVM, js, native)</td>
-<td><code>expect interface Sink</code><br>Receives a stream of bytes. Use this interface to write data wherever it&rsquo;s needed: to the network, storage, or a buffer in memory. Sinks may be layered to transform received data, such as to compress, encrypt, throttle, or add protocol framing.</td>
+<td>(js, jvm, native) <a href="-sink/">Sink</a></td>
+<td>Receives a stream of bytes. Use this interface to write data wherever it&rsquo;s needed: to the network, storage, or a buffer in memory. Sinks may be layered to transform received data, such as to compress, encrypt, throttle, or add protocol framing.<code>interface Sink</code></td>
 </tr>
 <tr>
-<td><a href="-source/">Source</a><br>(JVM, js, native)</td>
-<td><code>expect interface Source</code><br>Supplies a stream of bytes. Use this interface to read data from wherever it&rsquo;s located: from the network, storage, or a buffer in memory. Sources may be layered to transform supplied data, such as to decompress, decrypt, or remove protocol framing.</td>
+<td>(js, jvm, native) <a href="-source/">Source</a></td>
+<td>Supplies a stream of bytes. Use this interface to read data from wherever it&rsquo;s located: from the network, storage, or a buffer in memory. Sources may be layered to transform supplied data, such as to decompress, decrypt, or remove protocol framing.<code>interface Source</code></td>
 </tr>
 <tr>
-<td><a href="-throttler/">Throttler</a><br>(JVM)</td>
-<td><code>class Throttler</code><br>Enables limiting of Source and Sink throughput. Attach to this throttler via <a href="-throttler/source/">source</a> and <a href="-throttler/sink/">sink</a> and set the desired throughput via <a href="-throttler/bytes-per-second/">bytesPerSecond</a>. Multiple Sources and Sinks can be attached to a single Throttler and they will be throttled as a group, where their combined throughput will not exceed the desired throughput. The same Source or Sink can be attached to multiple Throttlers and its throughput will not exceed the desired throughput of any of the Throttlers.</td>
+<td>(jvm) <a href="-throttler/">Throttler</a></td>
+<td>Enables limiting of Source and Sink throughput. Attach to this throttler via <a href="-throttler/source/">source</a> and <a href="-throttler/sink/">sink</a> and set the desired throughput via <a href="-throttler/bytes-per-second/">bytesPerSecond</a>. Multiple Sources and Sinks can be attached to a single Throttler and they will be throttled as a group, where their combined throughput will not exceed the desired throughput. The same Source or Sink can be attached to multiple Throttlers and its throughput will not exceed the desired throughput of any of the Throttlers.<code>class Throttler</code></td>
 </tr>
 <tr>
-<td><a href="-timeout/">Timeout</a><br>(JVM, js, native)</td>
-<td><code>open expect class Timeout</code><br>A policy on how much time to spend on a task before giving up. When a task times out, it is left in an unspecified state and should be abandoned. For example, if reading from a source times out, that source should be closed and the read should be retried later. If writing to a sink times out, the same rules apply: close the sink and retry later.</td>
+<td>(js, jvm, native) <a href="-timeout/">Timeout</a></td>
+<td>A policy on how much time to spend on a task before giving up. When a task times out, it is left in an unspecified state and should be abandoned. For example, if reading from a source times out, that source should be closed and the read should be retried later. If writing to a sink times out, the same rules apply: close the sink and retry later.<code>open class Timeout</code></td>
 </tr>
 </tbody>
 </table>
@@ -571,16 +579,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-array-index-out-of-bounds-exception/">ArrayIndexOutOfBoundsException</a><br>(JVM, js, native)</td>
-<td><code>expect class ArrayIndexOutOfBoundsException :</code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IndexOutOfBoundsException.html"><code>IndexOutOfBoundsException</code></a></td>
+<td><a href="-array-index-out-of-bounds-exception/">ArrayIndexOutOfBoundsException</a></td>
+<td>(js, jvm) <code>class ArrayIndexOutOfBoundsException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-index-out-of-bounds-exception/index.html"><code>IndexOutOfBoundsException</code></a><br>(native) <code>typealias ArrayIndexOutOfBoundsException = &lt;ERROR CLASS&gt;</code></td>
 </tr>
 <tr>
-<td><a href="-e-o-f-exception/">EOFException</a><br>(JVM, js, native)</td>
-<td><code>open expect class EOFException :</code><a href="-i-o-exception/"><code>IOException</code></a></td>
+<td>(js, jvm, native) <a href="-e-o-f-exception/">EOFException</a></td>
+<td><code>open class EOFException :</code><a href="-i-o-exception/"><code>IOException</code></a></td>
 </tr>
 <tr>
-<td><a href="-i-o-exception/">IOException</a><br>(JVM, js, native)</td>
-<td><code>open expect class IOException :</code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html"><code>Exception</code></a></td>
+<td><a href="-i-o-exception/">IOException</a></td>
+<td>(js, jvm) <code>open class IOException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html"><code>Exception</code></a><br>(native) <code>open class IOException :</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html"><code>Exception</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -594,27 +602,27 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="java.io.-file/">java.io.File</a></td>
+<td>(jvm) <a href="java.io.-file/">java.io.File</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="java.io.-input-stream/">java.io.InputStream</a></td>
+<td>(jvm) <a href="java.io.-input-stream/">java.io.InputStream</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="java.io.-output-stream/">java.io.OutputStream</a></td>
+<td>(jvm) <a href="java.io.-output-stream/">java.io.OutputStream</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="java.net.-socket/">java.net.Socket</a></td>
+<td>(jvm) <a href="java.net.-socket/">java.net.Socket</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="java.nio.file.-path/">java.nio.file.Path</a></td>
+<td>(jvm) <a href="java.nio.file.-path/">java.nio.file.Path</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="kotlin.-string/">kotlin.String</a></td>
+<td>(js, jvm) <a href="kotlin.-string/">kotlin.String</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -629,12 +637,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-okio/">Okio</a><br>(JVM)</td>
-<td><code>val Okio: -DeprecatedOkio</code></td>
+<td>(jvm) <a href="-okio/">Okio</a></td>
+<td><code>val Okio:</code><a href="--deprecated-okio/"><code>-DeprecatedOkio</code></a></td>
 </tr>
 <tr>
-<td><a href="-utf8/">Utf8</a><br>(JVM)</td>
-<td><code>val Utf8: -DeprecatedUtf8</code></td>
+<td>(jvm) <a href="-utf8/">Utf8</a></td>
+<td><code>val Utf8:</code><a href="--deprecated-utf8/"><code>-DeprecatedUtf8</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -648,24 +656,24 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="blackhole-sink/">blackholeSink</a><br>(JVM, js, native)</td>
-<td><code>expect fun blackholeSink():</code><a href="-sink/"><code>Sink</code></a><br>Returns a sink that writes nowhere.</td>
+<td>(js, jvm, native) <a href="blackhole-sink/">blackholeSink</a></td>
+<td>Returns a sink that writes nowhere.<code>fun blackholeSink():</code><a href="-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="-source/"><code>Source</code></a><code>.buffer():</code><a href="-buffered-source/"><code>BufferedSource</code></a><br>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.<code>expect fun</code><a href="-sink/"><code>Sink</code></a><code>.buffer():</code><a href="-buffered-sink/"><code>BufferedSink</code></a><br>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>. Use this wherever you write to a sink to get an ergonomic and efficient access to data.</td>
+<td>(js, jvm, native) <a href="buffer/">buffer</a></td>
+<td>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.<code>fun</code><a href="-source/"><code>Source</code></a><code>.buffer():</code><a href="-buffered-source/"><code>BufferedSource</code></a><br>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>. Use this wherever you write to a sink to get an ergonomic and efficient access to data.<code>fun</code><a href="-sink/"><code>Sink</code></a><code>.buffer():</code><a href="-buffered-sink/"><code>BufferedSink</code></a></td>
 </tr>
 <tr>
-<td><a href="deflate/">deflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="-deflater-sink/"><code>DeflaterSink</code></a><br>Returns an <a href="-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="-sink/">Sink</a> while writing.</td>
+<td>(jvm) <a href="deflate/">deflate</a></td>
+<td>Returns an <a href="-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="-deflater-sink/"><code>DeflaterSink</code></a></td>
 </tr>
 <tr>
-<td><a href="gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="-sink/"><code>Sink</code></a><code>.gzip():</code><a href="-gzip-sink/"><code>GzipSink</code></a><br>Returns a <a href="-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="-sink/">Sink</a> while writing.<code>fun</code><a href="-source/"><code>Source</code></a><code>.gzip():</code><a href="-gzip-source/"><code>GzipSource</code></a><br>Returns a <a href="-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="-source/">Source</a> while reading.</td>
+<td>(jvm) <a href="gzip/">gzip</a></td>
+<td>Returns a <a href="-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="-sink/"><code>Sink</code></a><code>.gzip():</code><a href="-gzip-sink/"><code>GzipSink</code></a><br>Returns a <a href="-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="-source/"><code>Source</code></a><code>.gzip():</code><a href="-gzip-source/"><code>GzipSource</code></a></td>
 </tr>
 <tr>
-<td><a href="inflate/">inflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="-inflater-source/"><code>InflaterSource</code></a><br>Returns an <a href="-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="-source/">Source</a> while reading.</td>
+<td>(jvm) <a href="inflate/">inflate</a></td>
+<td>Returns an <a href="-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="-inflater-source/"><code>InflaterSource</code></a></td>
 </tr>
 </tbody>
 </table>

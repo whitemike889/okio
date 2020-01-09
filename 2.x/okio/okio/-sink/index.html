@@ -341,6 +341,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparison-with-outputstream_1" title="Comparison with OutputStream" class="md-nav__link">
+    Comparison with OutputStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interop-with-outputstream_1" title="Interop with OutputStream" class="md-nav__link">
+    Interop with OutputStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#functions" title="Functions" class="md-nav__link">
     Functions
   </a>
@@ -382,24 +396,41 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">Sink</a></p>
 <h1 id="sink">Sink<a class="headerlink" href="#sink" title="Permanent link">&para;</a></h1>
-<p><code>expect interface Sink</code></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>interface Sink</code>(js)</p>
 <p>Receives a stream of bytes. Use this interface to write data wherever it&rsquo;s needed: to the
 network, storage, or a buffer in memory. Sinks may be layered to transform received data, such as
 to compress, encrypt, throttle, or add protocol framing.</p>
-<p>Most application code shouldn&rsquo;t operate on a sink directly, but rather on a <a href="../-buffered-sink/">BufferedSink</a> which
-is both more efficient and more convenient. Use <a href="../buffer/">buffer</a> to wrap any sink with a buffer.</p>
-<p>Sinks are easy to test: just use a <a href="../-buffer/">Buffer</a> in your tests, and read from it to confirm it
+<p>Most application code shouldn&rsquo;t operate on a sink directly, but rather on a <a href="../-buffered-sink/#okio.BufferedSink">BufferedSink</a> which
+is both more efficient and more convenient. Use <a href="../buffer/#okio$buffer(okio.Source)">buffer</a> to wrap any sink with a buffer.</p>
+<p>Sinks are easy to test: just use a <a href="../-buffer/#okio.Buffer">Buffer</a> in your tests, and read from it to confirm it
 received the data that was expected.</p>
 <h3 id="comparison-with-outputstream">Comparison with OutputStream<a class="headerlink" href="#comparison-with-outputstream" title="Permanent link">&para;</a></h3>
-<p>This interface is functionally equivalent to <a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">java.io.OutputStream</a>.</p>
+<p>This interface is functionally equivalent to <a href="#">java.io.OutputStream</a>.</p>
 <p><code>OutputStream</code> requires multiple layers when emitted data is heterogeneous: a <code>DataOutputStream</code>
 for primitive values, a <code>BufferedOutputStream</code> for buffering, and <code>OutputStreamWriter</code> for
 charset encoding. This library uses <code>BufferedSink</code> for all of the above.</p>
-<p>Sink is also easier to layer: there is no <a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html#write(int)">write()</a> method that is
+<p>Sink is also easier to layer: there is no <a href="#">write()</a> method that is
 awkward to implement efficiently.</p>
 <h3 id="interop-with-outputstream">Interop with OutputStream<a class="headerlink" href="#interop-with-outputstream" title="Permanent link">&para;</a></h3>
 <p>Use <a href="#">sink</a> to adapt an <code>OutputStream</code> to a sink. Use <a href="#">outputStream()</a>
+to adapt a sink to an <code>OutputStream</code>.</p>
+<p>(jvm)</p>
+<p>Receives a stream of bytes. Use this interface to write data wherever it&rsquo;s needed: to the
+network, storage, or a buffer in memory. Sinks may be layered to transform received data, such as
+to compress, encrypt, throttle, or add protocol framing.</p>
+<p>Most application code shouldn&rsquo;t operate on a sink directly, but rather on a <a href="../-buffered-sink/#okio.BufferedSink">BufferedSink</a> which
+is both more efficient and more convenient. Use <a href="../buffer/#okio$buffer(okio.Source)">buffer</a> to wrap any sink with a buffer.</p>
+<p>Sinks are easy to test: just use a <a href="../-buffer/#okio.Buffer">Buffer</a> in your tests, and read from it to confirm it
+received the data that was expected.</p>
+<h3 id="comparison-with-outputstream_1">Comparison with OutputStream<a class="headerlink" href="#comparison-with-outputstream_1" title="Permanent link">&para;</a></h3>
+<p>This interface is functionally equivalent to <a href="https://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">java.io.OutputStream</a>.</p>
+<p><code>OutputStream</code> requires multiple layers when emitted data is heterogeneous: a <code>DataOutputStream</code>
+for primitive values, a <code>BufferedOutputStream</code> for buffering, and <code>OutputStreamWriter</code> for
+charset encoding. This library uses <code>BufferedSink</code> for all of the above.</p>
+<p>Sink is also easier to layer: there is no <a href="https://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html#write(int)">write()</a> method that is
+awkward to implement efficiently.</p>
+<h3 id="interop-with-outputstream_1">Interop with OutputStream<a class="headerlink" href="#interop-with-outputstream_1" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../java.io.-output-stream/sink/">sink</a> to adapt an <code>OutputStream</code> to a sink. Use <a href="../-buffered-sink/output-stream/">outputStream()</a>
 to adapt a sink to an <code>OutputStream</code>.</p>
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
 <table>
@@ -411,20 +442,20 @@ to adapt a sink to an <code>OutputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="close/">close</a></td>
-<td><code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Pushes all buffered bytes to their final destination and releases the resources held by this sink. It is an error to write a closed sink. It is safe to close a sink more than once.</td>
+<td>(js, jvm, native) <a href="close/">close</a></td>
+<td>Pushes all buffered bytes to their final destination and releases the resources held by this sink. It is an error to write a closed sink. It is safe to close a sink more than once.<code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="flush/">flush</a></td>
-<td><code>abstract fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Pushes all buffered bytes to their final destination.</td>
+<td>(js, jvm, native) <a href="flush/">flush</a></td>
+<td>Pushes all buffered bytes to their final destination.<code>abstract fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout/">timeout</a></td>
-<td><code>abstract fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a><br>Returns the timeout for this sink.</td>
+<td>(js, jvm, native) <a href="timeout/">timeout</a></td>
+<td>Returns the timeout for this sink.<code>abstract fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="write/">write</a></td>
-<td><code>abstract fun write(source:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Removes <code>byteCount</code> bytes from <code>source</code> and appends them to this.</td>
+<td>(js, jvm, native) <a href="write/">write</a></td>
+<td>Removes <code>byteCount</code> bytes from <code>source</code> and appends them to this.<code>abstract fun write(source:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -438,16 +469,12 @@ to adapt a sink to an <code>OutputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="./"><code>Sink</code></a><code>.buffer():</code><a href="../-buffered-sink/"><code>BufferedSink</code></a><br>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>. Use this wherever you write to a sink to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../deflate/">deflate</a></td>
+<td>Returns an <a href="../-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="./#okio.Sink">Sink</a> while writing.<code>fun</code><a href="./"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="../-deflater-sink/"><code>DeflaterSink</code></a></td>
 </tr>
 <tr>
-<td><a href="../deflate/">deflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="./"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="../-deflater-sink/"><code>DeflaterSink</code></a><br>Returns an <a href="../-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="./">Sink</a> while writing.</td>
-</tr>
-<tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="./"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a><br>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="./">Sink</a> while writing.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="./#okio.Sink">Sink</a> while writing.<code>fun</code><a href="./"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -461,20 +488,20 @@ to adapt a sink to an <code>OutputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../-buffered-sink/">BufferedSink</a><br>(JVM, js, native)</td>
-<td><code>expect interface BufferedSink :</code><a href="./"><code>Sink</code></a><br>A sink that keeps a buffer internally so that callers can do small writes without a performance penalty.</td>
+<td>(js, jvm, native) <a href="../-buffered-sink/">BufferedSink</a></td>
+<td>A sink that keeps a buffer internally so that callers can do small writes without a performance penalty.<code>interface BufferedSink :</code><a href="./"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="../-deflater-sink/">DeflaterSink</a><br>(JVM)</td>
-<td><code>class DeflaterSink :</code><a href="./"><code>Sink</code></a><br>A sink that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to compress data written to another source.</td>
+<td>(jvm) <a href="../-deflater-sink/">DeflaterSink</a></td>
+<td>A sink that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to compress data written to another source.<code>class DeflaterSink :</code><a href="./"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="../-forwarding-sink/">ForwardingSink</a><br>(JVM)</td>
-<td><code>abstract class ForwardingSink :</code><a href="./"><code>Sink</code></a><br>A <a href="./">Sink</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(jvm) <a href="../-forwarding-sink/">ForwardingSink</a></td>
+<td>A <a href="./#okio.Sink">Sink</a> which forwards calls to another. Useful for subclassing.<code>abstract class ForwardingSink :</code><a href="./"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="../-gzip-sink/">GzipSink</a><br>(JVM)</td>
-<td><code>class GzipSink :</code><a href="./"><code>Sink</code></a><br>A sink that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to compress written data to another sink.</td>
+<td>(jvm) <a href="../-gzip-sink/">GzipSink</a></td>
+<td>A sink that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to compress written data to another sink.<code>class GzipSink :</code><a href="./"><code>Sink</code></a></td>
 </tr>
 </tbody>
 </table>

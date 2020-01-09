@@ -338,19 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">writeHexadecimalUnsignedLong</a></p>
 <h1 id="writehexadecimalunsignedlong">writeHexadecimalUnsignedLong<a class="headerlink" href="#writehexadecimalunsignedlong" title="Permanent link">&para;</a></h1>
-<p><code>fun writeHexadecimalUnsignedLong(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/write-hexadecimal-unsigned-long/">BufferedSink.writeHexadecimalUnsignedLong</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes a long to this sink in hexadecimal form (i.e., as a string in base 16).</p>
-<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
-buffer.writeHexadecimalUnsignedLong(65535L);
-buffer.writeByte(&#39; &#39;);
-buffer.writeHexadecimalUnsignedLong(0xcafebabeL);
-buffer.writeByte(&#39; &#39;);
-buffer.writeHexadecimalUnsignedLong(0x10L);
-
-assertEquals(&quot;ffff cafebabe 10&quot;, buffer.readUtf8());
-</pre></div>
+<p>(js, jvm, native) <code>fun writeHexadecimalUnsignedLong(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

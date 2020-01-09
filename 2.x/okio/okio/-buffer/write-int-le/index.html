@@ -338,25 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">writeIntLe</a></p>
 <h1 id="writeintle">writeIntLe<a class="headerlink" href="#writeintle" title="Permanent link">&para;</a></h1>
-<p><code>fun writeIntLe(i:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/write-int-le/">BufferedSink.writeIntLe</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes a little-endian int to this sink using four bytes.</p>
-<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
-buffer.writeIntLe(2147483647);
-buffer.writeIntLe(15);
-
-assertEquals(8, buffer.size());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0x7f, buffer.readByte());
-assertEquals((byte) 0x0f, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals(0, buffer.size());
-</pre></div>
+<p>(js, jvm, native) <code>fun writeIntLe(i:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

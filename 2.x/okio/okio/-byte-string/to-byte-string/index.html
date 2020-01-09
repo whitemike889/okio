@@ -338,13 +338,11 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">ByteString</a> / <a href="./">toByteString</a></p>
 <h1 id="tobytestring">toByteString<a class="headerlink" href="#tobytestring" title="Permanent link">&para;</a></h1>
-<p><code>fun</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>.toByteString(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>= 0, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>= size):</code><a href="../"><code>ByteString</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Returns a new <a href="../">ByteString</a> containing a copy of <code>byteCount</code> bytes of this <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html">ByteArray</a>
+<p>(js, jvm) <code>@JvmStatic fun</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>.toByteString(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>= 0, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>= size):</code><a href="../"><code>ByteString</code></a>(native) <code>fun</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>.toByteString(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>ByteString</code></a></p>
+<p>Returns a new <a href="../#okio.ByteString">ByteString</a> containing a copy of <code>byteCount</code> bytes of this <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html">ByteArray</a>
 starting at <code>offset</code>.</p>
-<p><code>fun</code><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html"><code>ByteBuffer</code></a><code>.toByteString():</code><a href="../"><code>ByteString</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Returns a <a href="../">ByteString</a> containing a copy of this <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html">ByteBuffer</a>.</p>
+<p>(jvm) <code>@JvmStatic @JvmName("of") fun</code><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><code>ByteBuffer</code></a><code>.toByteString():</code><a href="../"><code>ByteString</code></a></p>
+<p>Returns a <a href="../#okio.ByteString">ByteString</a> containing a copy of this <a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html">ByteBuffer</a>.</p>
                 
                   
                 

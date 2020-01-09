@@ -338,9 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">ForwardingTimeout</a> / <a href="./">timeout</a></p>
 <h1 id="timeout">timeout<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h1>
-<p><code>open fun timeout(timeout:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../../-timeout/"><code>Timeout</code></a></p>
-<p>Overrides <a href="../../-timeout/timeout/">Timeout.timeout</a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>open fun timeout(timeout:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../../-timeout/"><code>Timeout</code></a></p>
 <p>Wait at most <code>timeout</code> time before aborting an operation. Using a per-operation timeout means
 that as long as forward progress is being made, no sequence of operations will fail.</p>
 <p>If <code>timeout == 0</code>, operations will run indefinitely. (Operating system timeouts may still

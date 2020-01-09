@@ -338,9 +338,8 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSink</a> / <a href="./">emit</a></p>
 <h1 id="emit">emit<a class="headerlink" href="#emit" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun emit():</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes all buffered data to the underlying sink, if one exists. Like <a href="../flush/">flush</a>, but weaker. Call
+<p>(js, jvm, native) <code>abstract fun emit():</code><a href="../"><code>BufferedSink</code></a></p>
+<p>Writes all buffered data to the underlying sink, if one exists. Like <a href="../flush/#okio.BufferedSink$flush()">flush</a>, but weaker. Call
 this before this buffered sink goes out of scope so that its data can reach its destination.</p>
 <div class="codehilite"><pre><span></span>BufferedSink b0 = new Buffer();
 BufferedSink b1 = Okio.buffer(b0);

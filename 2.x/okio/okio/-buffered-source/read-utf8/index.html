@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">readUtf8</a></p>
 <h1 id="readutf8">readUtf8<a class="headerlink" href="#readutf8" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun readUtf8():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
 <p>Removes all bytes from this, decodes them as UTF-8, and returns the string. Returns the empty
 string if this source is empty.</p>
 <div class="codehilite"><pre><span></span>Buffer buffer = new Buffer()
@@ -354,8 +353,7 @@ assertEquals(&quot;&quot;, buffer.readUtf8());
 assertEquals(0, buffer.size());
 </pre></div>
 
-<p><code>abstract fun readUtf8(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
 <p>Removes <code>byteCount</code> bytes from this, decodes them as UTF-8, and returns the string.</p>
 <div class="codehilite"><pre><span></span>Buffer buffer = new Buffer()
     .writeUtf8(&quot;Uh uh uh!&quot;)

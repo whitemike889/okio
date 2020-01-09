@@ -338,13 +338,11 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">buffer</a></p>
 <h1 id="buffer">buffer<a class="headerlink" href="#buffer" title="Permanent link">&para;</a></h1>
-<p><code>expect fun</code><a href="../-source/"><code>Source</code></a><code>.buffer():</code><a href="../-buffered-source/"><code>BufferedSource</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>fun</code><a href="../-source/"><code>Source</code></a><code>.buffer():</code><a href="../-buffered-source/"><code>BufferedSource</code></a></p>
 <p>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk
 reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and
 efficient access to data.</p>
-<p><code>expect fun</code><a href="../-sink/"><code>Sink</code></a><code>.buffer():</code><a href="../-buffered-sink/"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.buffer():</code><a href="../-buffered-sink/"><code>BufferedSink</code></a></p>
 <p>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>.
 Use this wherever you write to a sink to get an ergonomic and efficient access to data.</p>
                 

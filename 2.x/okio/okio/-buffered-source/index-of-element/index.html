@@ -338,11 +338,9 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">indexOfElement</a></p>
 <h1 id="indexofelement">indexOfElement<a class="headerlink" href="#indexofelement" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun indexOfElement(targetBytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Equivalent to <a href="./">indexOfElement(targetBytes, 0)</a>.</p>
-<p><code>abstract fun indexOfElement(targetBytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun indexOfElement(targetBytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
+<p>Equivalent to <a href="./#okio.BufferedSource$indexOfElement(okio.ByteString)">indexOfElement(targetBytes, 0)</a>.</p>
+<p>(js, jvm, native) <code>abstract fun indexOfElement(targetBytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></p>
 <p>Returns the first index in this buffer that is at or after <code>fromIndex</code> and that contains any of
 the bytes in <code>targetBytes</code>. This expands the buffer as necessary until a target byte is found.
 This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted

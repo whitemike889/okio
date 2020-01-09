@@ -338,9 +338,8 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Timeout</a> / <a href="./">throwIfReached</a></p>
 <h1 id="throwifreached">throwIfReached<a class="headerlink" href="#throwifreached" title="Permanent link">&para;</a></h1>
-<p><code>open fun throwIfReached():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if the deadline has been reached or if the current thread
+<p>(jvm) <code>open fun throwIfReached():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
+<p>Throws an <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if the deadline has been reached or if the current thread
 has been interrupted. This method doesn&rsquo;t detect timeouts; that should be implemented to
 asynchronously abort an in-progress operation.</p>
                 

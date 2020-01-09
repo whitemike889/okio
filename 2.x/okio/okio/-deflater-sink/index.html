@@ -375,8 +375,7 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">DeflaterSink</a></p>
 <h1 id="deflatersink">DeflaterSink<a class="headerlink" href="#deflatersink" title="Permanent link">&para;</a></h1>
-<p><code>class DeflaterSink :</code><a href="../-sink/"><code>Sink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>class DeflaterSink :</code><a href="../-sink/"><code>Sink</code></a></p>
 <p>A sink that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to
 compress data written to another source.</p>
 <h3 id="sync-flush">Sync flush<a class="headerlink" href="#sync-flush" title="Permanent link">&para;</a></h3>
@@ -384,7 +383,7 @@ compress data written to another source.</p>
 call to <a href="flush/">flush</a> immediately compresses all currently-buffered data;
 this early compression may be less effective than compression performed
 without flushing.</p>
-<p>This is equivalent to using <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html">Deflater</a> with the sync flush option.
+<p>This is equivalent to using <a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html">Deflater</a> with the sync flush option.
 This class does not offer any partial flush mechanism. For best performance,
 only call <a href="flush/">flush</a> when application behavior requires it.</p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
@@ -397,8 +396,8 @@ only call <a href="flush/">flush</a> when application behavior requires it.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>DeflaterSink(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, deflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>)</code></td>
+<td>(jvm) <a href="-init-/">&lt;init&gt;</a></td>
+<td><code>DeflaterSink(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, deflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>)</code></td>
 </tr>
 </tbody>
 </table>
@@ -412,23 +411,23 @@ only call <a href="flush/">flush</a> when application behavior requires it.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="close/">close</a></td>
+<td>(jvm) <a href="close/">close</a></td>
 <td><code>fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="flush/">flush</a></td>
+<td>(jvm) <a href="flush/">flush</a></td>
 <td><code>fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout/">timeout</a></td>
+<td>(jvm) <a href="timeout/">timeout</a></td>
 <td><code>fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="to-string/">toString</a></td>
+<td>(jvm) <a href="to-string/">toString</a></td>
 <td><code>fun toString():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 <tr>
-<td><a href="write/">write</a></td>
+<td>(jvm) <a href="write/">write</a></td>
 <td><code>fun write(source:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 </tbody>
@@ -443,16 +442,12 @@ only call <a href="flush/">flush</a> when application behavior requires it.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="../-sink/"><code>Sink</code></a><code>.buffer():</code><a href="../-buffered-sink/"><code>BufferedSink</code></a><br>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>. Use this wherever you write to a sink to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../deflate/">deflate</a></td>
+<td>Returns an <a href="./">DeflaterSink</a> that DEFLATE-compresses data to this <a href="../-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="./"><code>DeflaterSink</code></a></td>
 </tr>
 <tr>
-<td><a href="../deflate/">deflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="./"><code>DeflaterSink</code></a><br>Returns an <a href="./">DeflaterSink</a> that DEFLATE-compresses data to this <a href="../-sink/">Sink</a> while writing.</td>
-</tr>
-<tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a><br>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="../-sink/">Sink</a> while writing.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="../-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a></td>
 </tr>
 </tbody>
 </table>

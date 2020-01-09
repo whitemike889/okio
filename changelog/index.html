@@ -303,16 +303,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#version-240" title="Version 2.4.0" class="md-nav__link">
-    Version 2.4.0
+  <a href="#version-243" title="Version 2.4.3" class="md-nav__link">
+    Version 2.4.3
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-242" title="Version 2.4.2" class="md-nav__link">
+    Version 2.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-1175" title="Version 1.17.5" class="md-nav__link">
+    Version 1.17.5
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-241" title="Version 2.4.1" class="md-nav__link">
+    Version 2.4.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-240" title="Version 2.4.0" class="md-nav__link">
+    Version 2.4.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#version-230" title="Version 2.3.0" class="md-nav__link">
     Version 2.3.0
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -617,16 +651,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#version-240" title="Version 2.4.0" class="md-nav__link">
-    Version 2.4.0
+  <a href="#version-243" title="Version 2.4.3" class="md-nav__link">
+    Version 2.4.3
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#version-242" title="Version 2.4.2" class="md-nav__link">
+    Version 2.4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-1175" title="Version 1.17.5" class="md-nav__link">
+    Version 1.17.5
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-241" title="Version 2.4.1" class="md-nav__link">
+    Version 2.4.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-240" title="Version 2.4.0" class="md-nav__link">
+    Version 2.4.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#version-230" title="Version 2.3.0" class="md-nav__link">
     Version 2.3.0
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -895,6 +963,30 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-243">Version 2.4.3<a class="headerlink" href="#version-243" title="Permanent link">&para;</a></h2>
+<p><em>2019-12-20</em></p>
+<ul>
+<li>New Upgrade to Kotlin 1.3.61.</li>
+</ul>
+<h2 id="version-242">Version 2.4.2<a class="headerlink" href="#version-242" title="Permanent link">&para;</a></h2>
+<p><em>2019-12-11</em></p>
+<ul>
+<li>Fix: Don&rsquo;t crash when an <code>InputStream</code> source is exhausted exactly at a buffer segment boundary.
+   We had a bug where a sequence of reads could violate a buffer&rsquo;s invariants, and this could result
+   in a crash when subsequent reads encountered an unexpected empty segment.</li>
+</ul>
+<h2 id="version-1175">Version 1.17.5<a class="headerlink" href="#version-1175" title="Permanent link">&para;</a></h2>
+<p><em>2019-12-11</em></p>
+<ul>
+<li>Fix: Don&rsquo;t crash when an <code>InputStream</code> source is exhausted exactly at a buffer segment boundary.
+   We had a bug where a sequence of reads could violate a buffer&rsquo;s invariants, and this could result
+   in a crash when subsequent reads encountered an unexpected empty segment.</li>
+</ul>
+<h3 id="version-241">Version 2.4.1<a class="headerlink" href="#version-241" title="Permanent link">&para;</a></h3>
+<p><em>2019-10-04</em></p>
+<ul>
+<li>Fix: Don&rsquo;t cache hash code and UTF-8 string in <code>ByteString</code> on Kotlin/Native which prevented freezing.</li>
+</ul>
 <h3 id="version-240">Version 2.4.0<a class="headerlink" href="#version-240" title="Permanent link">&para;</a></h3>
 <p><em>2019-08-26</em></p>
 <ul>

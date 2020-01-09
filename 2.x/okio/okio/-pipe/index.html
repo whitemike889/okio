@@ -368,8 +368,7 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">Pipe</a></p>
 <h1 id="pipe">Pipe<a class="headerlink" href="#pipe" title="Permanent link">&para;</a></h1>
-<p><code>class Pipe</code></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>class Pipe</code></p>
 <p>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each
 is accessed by its own thread: a producer thread writes data to the sink and a consumer thread
 reads data from the source.</p>
@@ -377,11 +376,11 @@ reads data from the source.</p>
 size. When a producer thread outruns its consumer the buffer fills up and eventually writes to
 the sink will block until the consumer has caught up. Symmetrically, if a consumer outruns its
 producer reads block until there is data to be read. Limits on the amount of time spent waiting
-for the other party can be configured with <a href="../-timeout/">timeouts</a> on the source and the
+for the other party can be configured with <a href="../-timeout/#okio.Timeout">timeouts</a> on the source and the
 sink.</p>
 <p>When the sink is closed, source reads will continue to complete normally until the buffer has
 been exhausted. At that point reads will return -1, indicating the end of the stream. But if the
-source is closed first, writes to the sink will immediately fail with an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">IOException</a>.</p>
+source is closed first, writes to the sink will immediately fail with an <a href="https://docs.oracle.com/javase/6/docs/api/java/io/IOException.html">IOException</a>.</p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -392,8 +391,8 @@ source is closed first, writes to the sink will immediately fail with an <a href
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>Pipe(maxBufferSize:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>)</code><br>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each is accessed by its own thread: a producer thread writes data to the sink and a consumer thread reads data from the source.</td>
+<td>(jvm) <a href="-init-/">&lt;init&gt;</a></td>
+<td>A source and a sink that are attached. The sink&rsquo;s output is the source&rsquo;s input. Typically each is accessed by its own thread: a producer thread writes data to the sink and a consumer thread reads data from the source.<code>Pipe(maxBufferSize:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>)</code></td>
 </tr>
 </tbody>
 </table>
@@ -407,11 +406,11 @@ source is closed first, writes to the sink will immediately fail with an <a href
 </thead>
 <tbody>
 <tr>
-<td><a href="sink/">sink</a></td>
+<td>(jvm) <a href="sink/">sink</a></td>
 <td><code>val sink:</code><a href="../-sink/"><code>Sink</code></a></td>
 </tr>
 <tr>
-<td><a href="source/">source</a></td>
+<td>(jvm) <a href="source/">source</a></td>
 <td><code>val source:</code><a href="../-source/"><code>Source</code></a></td>
 </tr>
 </tbody>
@@ -426,8 +425,16 @@ source is closed first, writes to the sink will immediately fail with an <a href
 </thead>
 <tbody>
 <tr>
-<td><a href="fold/">fold</a></td>
-<td><code>fun fold(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Writes any buffered contents of this pipe to <code>sink</code>, then replace this pipe&rsquo;s source with <code>sink</code>. This pipe&rsquo;s source is closed and attempts to read it will throw an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html">IllegalStateException</a>.</td>
+<td>(jvm) <a href="fold/">fold</a></td>
+<td>Writes any buffered contents of this pipe to <code>sink</code>, then replace this pipe&rsquo;s source with <code>sink</code>. This pipe&rsquo;s source is closed and attempts to read it will throw an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>.<code>fun fold(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="sink/">sink</a></td>
+<td><code>fun ~~sink~~():</code><a href="../-sink/"><code>Sink</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="source/">source</a></td>
+<td><code>fun ~~source~~():</code><a href="../-source/"><code>Source</code></a></td>
 </tr>
 </tbody>
 </table>

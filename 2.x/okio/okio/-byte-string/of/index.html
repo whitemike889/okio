@@ -338,9 +338,12 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">ByteString</a> / <a href="./">of</a></p>
 <h1 id="of">of<a class="headerlink" href="#of" title="Permanent link">&para;</a></h1>
-<p><code>fun of(vararg data:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>):</code><a href="../"><code>ByteString</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm) <code>@JvmStatic fun of(vararg data:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>):</code><a href="../"><code>ByteString</code></a>(native) <code>fun of(vararg data:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>): &lt;ERROR CLASS&gt;</code></p>
 <p>Returns a new byte string containing a clone of the bytes of <code>data</code>.</p>
+<p>(jvm) <code>@JvmName("-deprecated_of") fun ~~of~~(buffer:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/ByteBuffer.html"><code>ByteBuffer</code></a><code>):</code><a href="../"><code>ByteString</code></a>
+<strong>Deprecated:</strong> moved to extension function</p>
+<p><code>@JvmName("-deprecated_of") fun ~~of~~(array:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>ByteString</code></a>
+<strong>Deprecated:</strong> moved to extension function</p>
                 
                   
                 

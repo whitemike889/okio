@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">rangeEquals</a></p>
 <h1 id="rangeequals">rangeEquals<a class="headerlink" href="#rangeequals" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></p>
 <p>Returns true if the bytes at <code>offset</code> in this source equal <code>bytes</code>. This expands the buffer as
 necessary until a byte does not match, all bytes are matched, or if the stream is exhausted
 before enough bytes could determine a match.</p>
@@ -352,8 +351,7 @@ Buffer payMeMoney = new Buffer().writeUtf8(&quot;Pay me $1,000,000.&quot;);
 assertFalse(payMeMoney.rangeEquals(0, simonSays));
 </pre></div>
 
-<p><code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>, bytesOffset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>, bytesOffset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></p>
 <p>Returns true if <code>byteCount</code> bytes at <code>offset</code> in this source equal <code>bytes</code> at <code>bytesOffset</code>.
 This expands the buffer as necessary until a byte does not match, all bytes are matched, or if
 the stream is exhausted before enough bytes could determine a match.</p>

@@ -338,10 +338,9 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">AsyncTimeout</a> / <a href="./">source</a></p>
 <h1 id="source">source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h1>
-<p><code>fun source(source:</code><a href="../../-source/"><code>Source</code></a><code>):</code><a href="../../-source/"><code>Source</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Returns a new source that delegates to <code>source</code>, using this to implement timeouts. This works
-best if <a href="../timed-out/">AsyncTimeout.timedOut</a> is overridden to interrupt <code>sink</code>&lsquo;s current operation.</p>
+<p>(jvm) <code>fun source(source:</code><a href="../../-source/"><code>Source</code></a><code>):</code><a href="../../-source/"><code>Source</code></a></p>
+<p>Returns a new source that delegates to <a href="./#okio.AsyncTimeout$source(okio.Source)/source">source</a>, using this to implement timeouts. This works
+best if <a href="../timed-out/">timedOut</a> is overridden to interrupt <a href="./#okio.AsyncTimeout$source(okio.Source)/source">source</a>&lsquo;s current operation.</p>
                 
                   
                 

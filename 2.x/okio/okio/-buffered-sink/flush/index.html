@@ -338,9 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSink</a> / <a href="./">flush</a></p>
 <h1 id="flush">flush<a class="headerlink" href="#flush" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p>Overrides <a href="../../-sink/flush/">Sink.flush</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm) <code>abstract fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
 <p>Writes all buffered data to the underlying sink, if one exists. Then that sink is recursively
 flushed which pushes data as far as possible towards its ultimate destination. Typically that
 destination is a network socket or file.</p>

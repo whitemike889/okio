@@ -338,16 +338,12 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSink</a> / <a href="./">write</a></p>
 <h1 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun write(byteString:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p><code>abstract fun write(source:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun write(byteString:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>):</code><a href="../"><code>BufferedSink</code></a>
+<code>abstract fun write(byteString:</code><a href="../../-byte-string/"><code>ByteString</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>BufferedSink</code></a>(js, jvm, native) <code>abstract fun write(source:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
 <p>Like <a href="#">OutputStream.write</a>, this writes a complete byte array to this sink.</p>
-<p><code>abstract fun write(source:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun write(source:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
 <p>Like <a href="#">OutputStream.write</a>, this writes <code>byteCount</code> bytes of <code>source</code>, starting at <code>offset</code>.</p>
-<p><code>abstract fun write(source:</code><a href="../../-source/"><code>Source</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun write(source:</code><a href="../../-source/"><code>Source</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
 <p>Removes <code>byteCount</code> bytes from <code>source</code> and appends them to this sink.</p>
                 
                   

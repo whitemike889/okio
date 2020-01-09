@@ -375,9 +375,8 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">ForwardingTimeout</a></p>
 <h1 id="forwardingtimeout">ForwardingTimeout<a class="headerlink" href="#forwardingtimeout" title="Permanent link">&para;</a></h1>
-<p><code>open class ForwardingTimeout :</code><a href="../-timeout/"><code>Timeout</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>A <a href="../-timeout/">Timeout</a> which forwards calls to another. Useful for subclassing.</p>
+<p>(jvm) <code>open class ForwardingTimeout :</code><a href="../-timeout/"><code>Timeout</code></a></p>
+<p>A <a href="../-timeout/#okio.Timeout">Timeout</a> which forwards calls to another. Useful for subclassing.</p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -388,8 +387,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>ForwardingTimeout(delegate:</code><a href="../-timeout/"><code>Timeout</code></a><code>)</code><br>A <a href="../-timeout/">Timeout</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(jvm) <a href="-init-/">&lt;init&gt;</a></td>
+<td>A <a href="../-timeout/#okio.Timeout">Timeout</a> which forwards calls to another. Useful for subclassing.<code>ForwardingTimeout(delegate:</code><a href="../-timeout/"><code>Timeout</code></a><code>)</code></td>
 </tr>
 </tbody>
 </table>
@@ -403,7 +402,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="delegate/">delegate</a></td>
+<td>(jvm) <a href="delegate/">delegate</a></td>
 <td><code>var delegate:</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 </tbody>
@@ -418,36 +417,36 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="clear-deadline/">clearDeadline</a></td>
-<td><code>open fun clearDeadline():</code><a href="../-timeout/"><code>Timeout</code></a><br>Clears the deadline.</td>
+<td>(jvm) <a href="clear-deadline/">clearDeadline</a></td>
+<td>Clears the deadline.<code>open fun clearDeadline():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="clear-timeout/">clearTimeout</a></td>
-<td><code>open fun clearTimeout():</code><a href="../-timeout/"><code>Timeout</code></a><br>Clears the timeout. Operating system timeouts may still apply.</td>
+<td>(jvm) <a href="clear-timeout/">clearTimeout</a></td>
+<td>Clears the timeout. Operating system timeouts may still apply.<code>open fun clearTimeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="deadline-nano-time/">deadlineNanoTime</a></td>
-<td><code>open fun deadlineNanoTime():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached.<code>open fun deadlineNanoTime(deadlineNanoTime:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a><br>Sets the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached. All operations must complete before this time. Use a deadline to set a maximum bound on the time spent on a sequence of operations.</td>
+<td>(jvm) <a href="deadline-nano-time/">deadlineNanoTime</a></td>
+<td>Returns the <a href="https://docs.oracle.com/javase/6/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached.<code>open fun deadlineNanoTime():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Sets the <a href="https://docs.oracle.com/javase/6/docs/api/java/lang/System.html#nanoTime()">nano time</a> when the deadline will be reached. All operations must complete before this time. Use a deadline to set a maximum bound on the time spent on a sequence of operations.<code>open fun deadlineNanoTime(deadlineNanoTime:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="has-deadline/">hasDeadline</a></td>
-<td><code>open fun hasDeadline():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true if a deadline is enabled.</td>
+<td>(jvm) <a href="has-deadline/">hasDeadline</a></td>
+<td>Returns true if a deadline is enabled.<code>open fun hasDeadline():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
 </tr>
 <tr>
-<td><a href="set-delegate/">setDelegate</a></td>
+<td>(jvm) <a href="set-delegate/">setDelegate</a></td>
 <td><code>fun setDelegate(delegate:</code><a href="../-timeout/"><code>Timeout</code></a><code>):</code><a href="./"><code>ForwardingTimeout</code></a></td>
 </tr>
 <tr>
-<td><a href="throw-if-reached/">throwIfReached</a></td>
-<td><code>open fun throwIfReached():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if the deadline has been reached or if the current thread has been interrupted. This method doesn&rsquo;t detect timeouts; that should be implemented to asynchronously abort an in-progress operation.</td>
+<td>(jvm) <a href="throw-if-reached/">throwIfReached</a></td>
+<td>Throws an <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if the deadline has been reached or if the current thread has been interrupted. This method doesn&rsquo;t detect timeouts; that should be implemented to asynchronously abort an in-progress operation.<code>open fun throwIfReached():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout/">timeout</a></td>
-<td><code>open fun timeout(timeout:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a><br>Wait at most <code>timeout</code> time before aborting an operation. Using a per-operation timeout means that as long as forward progress is being made, no sequence of operations will fail.</td>
+<td>(jvm) <a href="timeout/">timeout</a></td>
+<td>Wait at most <code>timeout</code> time before aborting an operation. Using a per-operation timeout means that as long as forward progress is being made, no sequence of operations will fail.<code>open fun timeout(timeout:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout-nanos/">timeoutNanos</a></td>
-<td><code>open fun timeoutNanos():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the timeout in nanoseconds, or <code>0</code> for no timeout.</td>
+<td>(jvm) <a href="timeout-nanos/">timeoutNanos</a></td>
+<td>Returns the timeout in nanoseconds, or <code>0</code> for no timeout.<code>open fun timeoutNanos():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -461,16 +460,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../-timeout/deadline/">deadline</a><br>(JVM)</td>
-<td><code>fun deadline(duration:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a><br>Set a deadline of now plus <code>duration</code> time.</td>
+<td>(jvm) <a href="../-timeout/deadline/">deadline</a></td>
+<td>Set a deadline of now plus <code>duration</code> time.<code>fun deadline(duration:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, unit:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/concurrent/TimeUnit.html"><code>TimeUnit</code></a><code>):</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 <tr>
-<td><a href="../-timeout/intersect-with/">intersectWith</a><br>(JVM)</td>
-<td><code>fun intersectWith(other:</code><a href="../-timeout/"><code>Timeout</code></a><code>, block: () -&gt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Applies the minimum intersection between this timeout and <code>other</code>, run <code>block</code>, then finally rollback this timeout&rsquo;s values.</td>
+<td>(jvm) <a href="../-timeout/intersect-with/">intersectWith</a></td>
+<td>Applies the minimum intersection between this timeout and <code>other</code>, run <code>block</code>, then finally rollback this timeout&rsquo;s values.<code>fun intersectWith(other:</code><a href="../-timeout/"><code>Timeout</code></a><code>, block: () -&gt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="../-timeout/wait-until-notified/">waitUntilNotified</a><br>(JVM)</td>
-<td><code>fun waitUntilNotified(monitor:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Waits on <code>monitor</code> until it is notified. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if either the thread is interrupted or if this timeout elapses before <code>monitor</code> is notified. The caller must be synchronized on <code>monitor</code>.</td>
+<td>(jvm) <a href="../-timeout/wait-until-notified/">waitUntilNotified</a></td>
+<td>Waits on <code>monitor</code> until it is notified. Throws <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if either the thread is interrupted or if this timeout elapses before <code>monitor</code> is notified. The caller must be synchronized on <code>monitor</code>.<code>fun waitUntilNotified(monitor:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 </tbody>
 </table>

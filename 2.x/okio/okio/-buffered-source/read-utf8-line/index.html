@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">readUtf8Line</a></p>
 <h1 id="readutf8line">readUtf8Line<a class="headerlink" href="#readutf8line" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun readUtf8Line():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8Line():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code>(js)</p>
 <p>Removes and returns characters up to but not including the next line break. A line break is
 either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.</p>
 <div class="codehilite"><pre><span></span>Buffer buffer = new Buffer()
@@ -361,7 +360,33 @@ assertEquals(null, buffer.readUtf8Line());
 assertEquals(0, buffer.size());
 </pre></div>
 
-<p><strong>On the end of the stream this method returns null,</strong> just like <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">java.io.BufferedReader</a>. If
+<p><strong>On the end of the stream this method returns null,</strong> just like <a href="#">java.io.BufferedReader</a>. If
+the source doesn&rsquo;t end with a line break then an implicit line break is assumed. Null is
+returned once the source is exhausted. Use this for human-generated data, where a trailing
+line break is optional.</p>
+<p>(jvm)</p>
+<p>Removes and returns characters up to but not including the next line break. A line break is
+either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.</p>
+<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer()
+    .writeUtf8(&quot;I&#39;m a hacker!\n&quot;)
+    .writeUtf8(&quot;That&#39;s what I said: you&#39;re a nerd.\n&quot;)
+    .writeUtf8(&quot;I prefer to be called a hacker!\n&quot;);
+assertEquals(81, buffer.size());
+
+assertEquals(&quot;I&#39;m a hacker!&quot;, buffer.readUtf8Line());
+assertEquals(67, buffer.size());
+
+assertEquals(&quot;That&#39;s what I said: you&#39;re a nerd.&quot;, buffer.readUtf8Line());
+assertEquals(32, buffer.size());
+
+assertEquals(&quot;I prefer to be called a hacker!&quot;, buffer.readUtf8Line());
+assertEquals(0, buffer.size());
+
+assertEquals(null, buffer.readUtf8Line());
+assertEquals(0, buffer.size());
+</pre></div>
+
+<p><strong>On the end of the stream this method returns null,</strong> just like <a href="https://docs.oracle.com/javase/6/docs/api/java/io/BufferedReader.html">java.io.BufferedReader</a>. If
 the source doesn&rsquo;t end with a line break then an implicit line break is assumed. Null is
 returned once the source is exhausted. Use this for human-generated data, where a trailing
 line break is optional.</p>

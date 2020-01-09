@@ -338,9 +338,8 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Timeout</a> / <a href="./">waitUntilNotified</a></p>
 <h1 id="waituntilnotified">waitUntilNotified<a class="headerlink" href="#waituntilnotified" title="Permanent link">&para;</a></h1>
-<p><code>fun waitUntilNotified(monitor:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
-<p>Waits on <code>monitor</code> until it is notified. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if either the thread
+<p>(jvm) <code>fun waitUntilNotified(monitor:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></p>
+<p>Waits on <code>monitor</code> until it is notified. Throws <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InterruptedIOException.html">InterruptedIOException</a> if either the thread
 is interrupted or if this timeout elapses before <code>monitor</code> is notified. The caller must be
 synchronized on <code>monitor</code>.</p>
 <p>Here&rsquo;s a sample class that uses <code>waitUntilNotified()</code> to await a specific state. Note that the

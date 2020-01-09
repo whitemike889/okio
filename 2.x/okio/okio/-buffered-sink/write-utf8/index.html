@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSink</a> / <a href="./">writeUtf8</a></p>
 <h1 id="writeutf8">writeUtf8<a class="headerlink" href="#writeutf8" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun writeUtf8(string:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun writeUtf8(string:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
 <p>Encodes <code>string</code> in UTF-8 and writes it to this sink.</p>
 <div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
 buffer.writeUtf8(&quot;Uh uh uh!&quot;);
@@ -349,8 +348,7 @@ buffer.writeUtf8(&quot;You didn&#39;t say the magic word!&quot;);
 assertEquals(&quot;Uh uh uh! You didn&#39;t say the magic word!&quot;, buffer.readUtf8());
 </pre></div>
 
-<p><code>abstract fun writeUtf8(string:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, beginIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, endIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun writeUtf8(string:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, beginIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, endIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="../"><code>BufferedSink</code></a></p>
 <p>Encodes the characters at <code>beginIndex</code> up to <code>endIndex</code> from <code>string</code> in UTF-8 and writes it to
 this sink.</p>
 <div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();

@@ -338,9 +338,11 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSink</a> / <a href="./">buffer</a></p>
 <h1 id="buffer">buffer<a class="headerlink" href="#buffer" title="Permanent link">&para;</a></h1>
-<p><code>abstract val buffer:</code><a href="../../-buffer/"><code>Buffer</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract val buffer:</code><a href="../../-buffer/"><code>Buffer</code></a></p>
 <p>This sink&rsquo;s internal buffer.</p>
+<p>(jvm) <code>abstract fun ~~buffer~~():</code><a href="../../-buffer/"><code>Buffer</code></a>
+<strong>Deprecated:</strong> moved to val: use getBuffer() instead</p>
+<p>Returns this sink&rsquo;s internal buffer.</p>
                 
                   
                 

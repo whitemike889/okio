@@ -341,13 +341,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inherited-functions" title="Inherited Functions" class="md-nav__link">
-    Inherited Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#extension-functions" title="Extension Functions" class="md-nav__link">
     Extension Functions
   </a>
@@ -382,8 +375,7 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">BufferedSource</a></p>
 <h1 id="bufferedsource">BufferedSource<a class="headerlink" href="#bufferedsource" title="Permanent link">&para;</a></h1>
-<p><code>expect interface BufferedSource :</code><a href="../-source/"><code>Source</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>interface BufferedSource :</code><a href="../-source/"><code>Source</code></a></p>
 <p>A source that keeps a buffer internally so that callers can do small reads without a performance
 penalty. It also allows clients to read ahead, buffering as much as necessary before consuming
 input.</p>
@@ -397,8 +389,8 @@ input.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="buffer/">buffer</a></td>
-<td><code>abstract val buffer:</code><a href="../-buffer/"><code>Buffer</code></a><br>This source&rsquo;s internal buffer.</td>
+<td>(js, jvm, native) <a href="buffer/">buffer</a></td>
+<td>This source&rsquo;s internal buffer.<code>abstract val buffer:</code><a href="../-buffer/"><code>Buffer</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -412,143 +404,124 @@ input.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="exhausted/">exhausted</a></td>
-<td><code>abstract fun exhausted():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true if there are no more bytes in this source. This will block until there are bytes to read or the source is definitely exhausted.</td>
+<td>(jvm) <a href="buffer/">buffer</a></td>
+<td>Returns this source&rsquo;s internal buffer.<code>abstract fun ~~buffer~~():</code><a href="../-buffer/"><code>Buffer</code></a></td>
 </tr>
 <tr>
-<td><a href="index-of/">indexOf</a></td>
-<td><code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Equivalent to <a href="index-of/">indexOf(b, 0)</a>.<code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of the first <code>b</code> in the buffer at or after <code>fromIndex</code>. This expands the buffer as necessary until <code>b</code> is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested byte is found.<code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, toIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of <code>b</code> if it is found in the range of <code>fromIndex</code> inclusive to <code>toIndex</code> exclusive. If <code>b</code> isn&rsquo;t found, or if <code>fromIndex == toIndex</code>, then -1 is returned.<code>abstract fun indexOf(bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Equivalent to <a href="index-of/">indexOf(bytes, 0)</a>.<code>abstract fun indexOf(bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of the first match for <code>bytes</code> in the buffer at or after <code>fromIndex</code>. This expands the buffer as necessary until <code>bytes</code> is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested bytes are found.</td>
+<td>(js, jvm, native) <a href="exhausted/">exhausted</a></td>
+<td>Returns true if there are no more bytes in this source. This will block until there are bytes to read or the source is definitely exhausted.<code>abstract fun exhausted():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
 </tr>
 <tr>
-<td><a href="index-of-element/">indexOfElement</a></td>
-<td><code>abstract fun indexOfElement(targetBytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Equivalent to <a href="index-of-element/">indexOfElement(targetBytes, 0)</a>.<code>abstract fun indexOfElement(targetBytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the first index in this buffer that is at or after <code>fromIndex</code> and that contains any of the bytes in <code>targetBytes</code>. This expands the buffer as necessary until a target byte is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested byte is found.</td>
+<td>(js, jvm, native) <a href="index-of/">indexOf</a></td>
+<td>Equivalent to <a href="index-of/#okio.BufferedSource$indexOf(kotlin.Byte)">indexOf(b, 0)</a>.<code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of the first <code>b</code> in the buffer at or after <code>fromIndex</code>. This expands the buffer as necessary until <code>b</code> is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested byte is found.<code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of <code>b</code> if it is found in the range of <code>fromIndex</code> inclusive to <code>toIndex</code> exclusive. If <code>b</code> isn&rsquo;t found, or if <code>fromIndex == toIndex</code>, then -1 is returned.<code>abstract fun indexOf(b:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, toIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Equivalent to <a href="index-of/#okio.BufferedSource$indexOf(kotlin.Byte)">indexOf(bytes, 0)</a>.<code>abstract fun indexOf(bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the index of the first match for <code>bytes</code> in the buffer at or after <code>fromIndex</code>. This expands the buffer as necessary until <code>bytes</code> is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested bytes are found.<code>abstract fun indexOf(bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="input-stream/">inputStream</a><br>(JVM)</td>
-<td><code>abstract fun inputStream():</code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><code>InputStream</code></a><br>Returns an input stream that reads from this source.</td>
+<td>(js, jvm, native) <a href="index-of-element/">indexOfElement</a></td>
+<td>Equivalent to <a href="index-of-element/#okio.BufferedSource$indexOfElement(okio.ByteString)">indexOfElement(targetBytes, 0)</a>.<code>abstract fun indexOfElement(targetBytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Returns the first index in this buffer that is at or after <code>fromIndex</code> and that contains any of the bytes in <code>targetBytes</code>. This expands the buffer as necessary until a target byte is found. This reads an unbounded number of bytes into the buffer. Returns -1 if the stream is exhausted before the requested byte is found.<code>abstract fun indexOfElement(targetBytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, fromIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="peek/">peek</a></td>
-<td><code>abstract fun peek():</code><a href="./"><code>BufferedSource</code></a><br>Returns a new <code>BufferedSource</code> that can read data from this <code>BufferedSource</code> without consuming it. The returned source becomes invalid once this source is next read or closed.</td>
+<td>(jvm) <a href="input-stream/">inputStream</a></td>
+<td>Returns an input stream that reads from this source.<code>abstract fun inputStream():</code><a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><code>InputStream</code></a></td>
 </tr>
 <tr>
-<td><a href="range-equals/">rangeEquals</a></td>
-<td><code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true if the bytes at <code>offset</code> in this source equal <code>bytes</code>. This expands the buffer as necessary until a byte does not match, all bytes are matched, or if the stream is exhausted before enough bytes could determine a match.<code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, bytesOffset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true if <code>byteCount</code> bytes at <code>offset</code> in this source equal <code>bytes</code> at <code>bytesOffset</code>. This expands the buffer as necessary until a byte does not match, all bytes are matched, or if the stream is exhausted before enough bytes could determine a match.</td>
+<td>(js, jvm, native) <a href="peek/">peek</a></td>
+<td>Returns a new <code>BufferedSource</code> that can read data from this <code>BufferedSource</code> without consuming it. The returned source becomes invalid once this source is next read or closed.<code>abstract fun peek():</code><a href="./"><code>BufferedSource</code></a></td>
 </tr>
 <tr>
-<td><a href="read/">read</a></td>
-<td><code>abstract fun read(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes up to <code>sink.length</code> bytes from this and copies them into <code>sink</code>. Returns the number of bytes read, or -1 if this source is exhausted.<code>abstract fun read(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes up to <code>byteCount</code> bytes from this and copies them into <code>sink</code> at <code>offset</code>. Returns the number of bytes read, or -1 if this source is exhausted.</td>
+<td>(js, jvm, native) <a href="range-equals/">rangeEquals</a></td>
+<td>Returns true if the bytes at <code>offset</code> in this source equal <code>bytes</code>. This expands the buffer as necessary until a byte does not match, all bytes are matched, or if the stream is exhausted before enough bytes could determine a match.<code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true if <code>byteCount</code> bytes at <code>offset</code> in this source equal <code>bytes</code> at <code>bytesOffset</code>. This expands the buffer as necessary until a byte does not match, all bytes are matched, or if the stream is exhausted before enough bytes could determine a match.<code>abstract fun rangeEquals(offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, bytes:</code><a href="../-byte-string/"><code>ByteString</code></a><code>, bytesOffset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
 </tr>
 <tr>
-<td><a href="read-all/">readAll</a></td>
-<td><code>abstract fun readAll(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Removes all bytes from this and appends them to <code>sink</code>. Returns the total number of bytes written to <code>sink</code> which will be 0 if this is exhausted.</td>
+<td>(js, jvm, native) <a href="read/">read</a></td>
+<td>Removes up to <code>sink.length</code> bytes from this and copies them into <code>sink</code>. Returns the number of bytes read, or -1 if this source is exhausted.<code>abstract fun read(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes up to <code>byteCount</code> bytes from this and copies them into <code>sink</code> at <code>offset</code>. Returns the number of bytes read, or -1 if this source is exhausted.<code>abstract fun read(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>, offset:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
 </tr>
 <tr>
-<td><a href="read-byte/">readByte</a></td>
-<td><code>abstract fun readByte():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a><br>Removes a byte from this source and returns it.</td>
+<td>(js, jvm, native) <a href="read-all/">readAll</a></td>
+<td>Removes all bytes from this and appends them to <code>sink</code>. Returns the total number of bytes written to <code>sink</code> which will be 0 if this is exhausted.<code>abstract fun readAll(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="read-byte-array/">readByteArray</a></td>
-<td><code>abstract fun readByteArray():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><br>Removes all bytes from this and returns them as a byte array.<code>abstract fun readByteArray(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><br>Removes <code>byteCount</code> bytes from this and returns them as a byte array.</td>
+<td>(js, jvm, native) <a href="read-byte/">readByte</a></td>
+<td>Removes a byte from this source and returns it.<code>abstract fun readByte():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html"><code>Byte</code></a></td>
 </tr>
 <tr>
-<td><a href="read-byte-string/">readByteString</a></td>
-<td><code>abstract fun readByteString():</code><a href="../-byte-string/"><code>ByteString</code></a><br>Removes all bytes bytes from this and returns them as a byte string.<code>abstract fun readByteString(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../-byte-string/"><code>ByteString</code></a><br>Removes <code>byteCount</code> bytes from this and returns them as a byte string.</td>
+<td>(js, jvm, native) <a href="read-byte-array/">readByteArray</a></td>
+<td>Removes all bytes from this and returns them as a byte array.<code>abstract fun readByteArray():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><br>Removes <code>byteCount</code> bytes from this and returns them as a byte array.<code>abstract fun readByteArray(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a></td>
 </tr>
 <tr>
-<td><a href="read-decimal-long/">readDecimalLong</a></td>
-<td><code>abstract fun readDecimalLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Reads a long from this source in signed decimal form (i.e., as a string in base 10 with optional leading &lsquo;-&lsquo;). This will iterate until a non-digit character is found.</td>
+<td>(js, jvm, native) <a href="read-byte-string/">readByteString</a></td>
+<td>Removes all bytes bytes from this and returns them as a byte string.<code>abstract fun readByteString():</code><a href="../-byte-string/"><code>ByteString</code></a><br>Removes <code>byteCount</code> bytes from this and returns them as a byte string.<code>abstract fun readByteString(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../-byte-string/"><code>ByteString</code></a></td>
 </tr>
 <tr>
-<td><a href="read-fully/">readFully</a></td>
-<td><code>abstract fun readFully(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Removes exactly <code>sink.length</code> bytes from this and copies them into <code>sink</code>. Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the requested number of bytes cannot be read.<code>abstract fun readFully(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Removes exactly <code>byteCount</code> bytes from this and appends them to <code>sink</code>. Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the requested number of bytes cannot be read.</td>
+<td>(js, jvm, native) <a href="read-decimal-long/">readDecimalLong</a></td>
+<td>Reads a long from this source in signed decimal form (i.e., as a string in base 10 with optional leading &lsquo;-&lsquo;). This will iterate until a non-digit character is found.<code>abstract fun readDecimalLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="read-hexadecimal-unsigned-long/">readHexadecimalUnsignedLong</a></td>
-<td><code>abstract fun readHexadecimalUnsignedLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Reads a long form this source in hexadecimal form (i.e., as a string in base 16). This will iterate until a non-hexadecimal character is found.</td>
+<td>(js, jvm, native) <a href="read-fully/">readFully</a></td>
+<td>Removes exactly <code>sink.length</code> bytes from this and copies them into <code>sink</code>. Throws an <a href="#">java.io.EOFException</a> if the requested number of bytes cannot be read.<code>abstract fun readFully(sink:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><code>ByteArray</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Removes exactly <code>byteCount</code> bytes from this and appends them to <code>sink</code>. Throws an <a href="#">java.io.EOFException</a> if the requested number of bytes cannot be read.<code>abstract fun readFully(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="read-int/">readInt</a></td>
-<td><code>abstract fun readInt():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes four bytes from this source and returns a big-endian int.</td>
+<td>(js, jvm, native) <a href="read-hexadecimal-unsigned-long/">readHexadecimalUnsignedLong</a></td>
+<td>Reads a long form this source in hexadecimal form (i.e., as a string in base 16). This will iterate until a non-hexadecimal character is found.<code>abstract fun readHexadecimalUnsignedLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="read-int-le/">readIntLe</a></td>
-<td><code>abstract fun readIntLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes four bytes from this source and returns a little-endian int.</td>
+<td>(js, jvm, native) <a href="read-int/">readInt</a></td>
+<td>Removes four bytes from this source and returns a big-endian int.<code>abstract fun readInt():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
 </tr>
 <tr>
-<td><a href="read-long/">readLong</a></td>
-<td><code>abstract fun readLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Removes eight bytes from this source and returns a big-endian long.</td>
+<td>(js, jvm, native) <a href="read-int-le/">readIntLe</a></td>
+<td>Removes four bytes from this source and returns a little-endian int.<code>abstract fun readIntLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
 </tr>
 <tr>
-<td><a href="read-long-le/">readLongLe</a></td>
-<td><code>abstract fun readLongLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Removes eight bytes from this source and returns a little-endian long.</td>
+<td>(js, jvm, native) <a href="read-long/">readLong</a></td>
+<td>Removes eight bytes from this source and returns a big-endian long.<code>abstract fun readLong():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="read-short/">readShort</a></td>
-<td><code>abstract fun readShort():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><code>Short</code></a><br>Removes two bytes from this source and returns a big-endian short.</td>
+<td>(js, jvm, native) <a href="read-long-le/">readLongLe</a></td>
+<td>Removes eight bytes from this source and returns a little-endian long.<code>abstract fun readLongLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="read-short-le/">readShortLe</a></td>
-<td><code>abstract fun readShortLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><code>Short</code></a><br>Removes two bytes from this source and returns a little-endian short.</td>
+<td>(js, jvm, native) <a href="read-short/">readShort</a></td>
+<td>Removes two bytes from this source and returns a big-endian short.<code>abstract fun readShort():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><code>Short</code></a></td>
 </tr>
 <tr>
-<td><a href="read-string/">readString</a><br>(JVM)</td>
-<td><code>abstract fun readString(charset:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html"><code>Charset</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes all bytes from this, decodes them as <code>charset</code>, and returns the string.<code>abstract fun readString(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, charset:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html"><code>Charset</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes <code>byteCount</code> bytes from this, decodes them as <code>charset</code>, and returns the string.</td>
+<td>(js, jvm, native) <a href="read-short-le/">readShortLe</a></td>
+<td>Removes two bytes from this source and returns a little-endian short.<code>abstract fun readShortLe():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-short/index.html"><code>Short</code></a></td>
 </tr>
 <tr>
-<td><a href="read-utf8/">readUtf8</a></td>
-<td><code>abstract fun readUtf8():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes all bytes from this, decodes them as UTF-8, and returns the string. Returns the empty string if this source is empty.<code>abstract fun readUtf8(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes <code>byteCount</code> bytes from this, decodes them as UTF-8, and returns the string.</td>
+<td>(jvm) <a href="read-string/">readString</a></td>
+<td>Removes all bytes from this, decodes them as <code>charset</code>, and returns the string.<code>abstract fun readString(charset:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/charset/Charset.html"><code>Charset</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes <code>byteCount</code> bytes from this, decodes them as <code>charset</code>, and returns the string.<code>abstract fun readString(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, charset:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/nio/charset/Charset.html"><code>Charset</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 <tr>
-<td><a href="read-utf8-code-point/">readUtf8CodePoint</a></td>
-<td><code>abstract fun readUtf8CodePoint():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Removes and returns a single UTF-8 code point, reading between 1 and 4 bytes as necessary.</td>
+<td>(js, jvm, native) <a href="read-utf8/">readUtf8</a></td>
+<td>Removes all bytes from this, decodes them as UTF-8, and returns the string. Returns the empty string if this source is empty.<code>abstract fun readUtf8():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes <code>byteCount</code> bytes from this, decodes them as UTF-8, and returns the string.<code>abstract fun readUtf8(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 <tr>
-<td><a href="read-utf8-line/">readUtf8Line</a></td>
-<td><code>abstract fun readUtf8Line():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code><br>Removes and returns characters up to but not including the next line break. A line break is either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.</td>
+<td>(js, jvm, native) <a href="read-utf8-code-point/">readUtf8CodePoint</a></td>
+<td>Removes and returns a single UTF-8 code point, reading between 1 and 4 bytes as necessary.<code>abstract fun readUtf8CodePoint():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
 </tr>
 <tr>
-<td><a href="read-utf8-line-strict/">readUtf8LineStrict</a></td>
-<td><code>abstract fun readUtf8LineStrict():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Removes and returns characters up to but not including the next line break. A line break is either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.<code>abstract fun readUtf8LineStrict(limit:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Like <a href="read-utf8-line-strict/">readUtf8LineStrict</a>, except this allows the caller to specify the longest allowed match. Use this to protect against streams that may not include <code>"\n"</code> or <code>"\r\n"</code>.</td>
+<td>(js, jvm, native) <a href="read-utf8-line/">readUtf8Line</a></td>
+<td>Removes and returns characters up to but not including the next line break. A line break is either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.<code>abstract fun readUtf8Line():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code></td>
 </tr>
 <tr>
-<td><a href="request/">request</a></td>
-<td><code>abstract fun request(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><br>Returns true when the buffer contains at least <code>byteCount</code> bytes, expanding it as necessary. Returns false if the source is exhausted before the requested bytes can be read.</td>
+<td>(js, jvm, native) <a href="read-utf8-line-strict/">readUtf8LineStrict</a></td>
+<td>Removes and returns characters up to but not including the next line break. A line break is either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.<code>abstract fun readUtf8LineStrict():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Like <a href="read-utf8-line-strict/#okio.BufferedSource$readUtf8LineStrict()">readUtf8LineStrict</a>, except this allows the caller to specify the longest allowed match. Use this to protect against streams that may not include <code>"\n"</code> or <code>"\r\n"</code>.<code>abstract fun readUtf8LineStrict(limit:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 <tr>
-<td><a href="require/">require</a></td>
-<td><code>abstract fun require(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Returns when the buffer contains at least <code>byteCount</code> bytes. Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the source is exhausted before the required bytes can be read.</td>
+<td>(js, jvm, native) <a href="request/">request</a></td>
+<td>Returns true when the buffer contains at least <code>byteCount</code> bytes, expanding it as necessary. Returns false if the source is exhausted before the requested bytes can be read.<code>abstract fun request(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
+</tr>
+<tr>
+<td>(js, jvm, native) <a href="require/">require</a></td>
+<td>Returns when the buffer contains at least <code>byteCount</code> bytes. Throws an <a href="#">java.io.EOFException</a> if the source is exhausted before the required bytes can be read.<code>abstract fun require(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
 <td><a href="select/">select</a></td>
-<td><code>abstract fun select(options:</code><a href="../-options/"><code>Options</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>Finds the first string in <code>options</code> that is a prefix of this buffer, consumes it from this buffer, and returns its index. If no byte string in <code>options</code> is a prefix of this buffer this returns -1 and no bytes are consumed.<code>abstract actual fun select(options: &lt;ERROR CLASS&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
+<td>(native) <code>abstract fun select(options: &lt;ERROR CLASS&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a>(js, jvm) <br>Finds the first string in <code>options</code> that is a prefix of this buffer, consumes it from this buffer, and returns its index. If no byte string in <code>options</code> is a prefix of this buffer this returns -1 and no bytes are consumed.<code>abstract fun select(options:</code><a href="../-options/"><code>Options</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
 </tr>
 <tr>
-<td><a href="skip/">skip</a></td>
-<td><code>abstract fun skip(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Reads and discards <code>byteCount</code> bytes from this source. Throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a> if the source is exhausted before the requested bytes can be skipped.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-functions">Inherited Functions<a class="headerlink" href="#inherited-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-source/close/">close</a><br>(JVM, js, native)</td>
-<td><code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Closes this source and releases the resources held by this source. It is an error to read a closed source. It is safe to close a source more than once.</td>
-</tr>
-<tr>
-<td><a href="../-source/read/">read</a><br>(JVM, js, native)</td>
-<td><code>abstract fun read(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Removes at least 1, and up to <code>byteCount</code> bytes from this and appends them to <code>sink</code>. Returns the number of bytes read, or -1 if this source is exhausted.</td>
-</tr>
-<tr>
-<td><a href="../-source/timeout/">timeout</a><br>(JVM, js, native)</td>
-<td><code>abstract fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a><br>Returns the timeout for this source.</td>
+<td>(js, jvm, native) <a href="skip/">skip</a></td>
+<td>Reads and discards <code>byteCount</code> bytes from this source. Throws an <a href="#">java.io.EOFException</a> if the source is exhausted before the requested bytes can be skipped.<code>abstract fun skip(byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -562,16 +535,12 @@ input.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="../-source/"><code>Source</code></a><code>.buffer():</code><a href="./"><code>BufferedSource</code></a><br>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a></td>
 </tr>
 <tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a><br>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="../-source/">Source</a> while reading.</td>
-</tr>
-<tr>
-<td><a href="../inflate/">inflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a><br>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/">Source</a> while reading.</td>
+<td>(jvm) <a href="../inflate/">inflate</a></td>
+<td>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -585,8 +554,8 @@ input.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../-buffer/">Buffer</a><br>(JVM, js, native)</td>
-<td><code>expect class Buffer :</code><a href="./"><code>BufferedSource</code></a><code>,</code><a href="../-buffered-sink/"><code>BufferedSink</code></a><br>A collection of bytes in memory.</td>
+<td>(js, jvm, native) <a href="../-buffer/">Buffer</a></td>
+<td>A collection of bytes in memory.<code>class Buffer :</code><a href="./"><code>BufferedSource</code></a><code>,</code><a href="../-buffered-sink/"><code>BufferedSink</code></a></td>
 </tr>
 </tbody>
 </table>

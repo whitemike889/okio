@@ -338,30 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">emit</a></p>
 <h1 id="emit">emit<a class="headerlink" href="#emit" title="Permanent link">&para;</a></h1>
-<p><code>fun emit():</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/emit/">BufferedSink.emit</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes all buffered data to the underlying sink, if one exists. Like <a href="../../-buffered-sink/flush/">flush</a>, but weaker. Call
-this before this buffered sink goes out of scope so that its data can reach its destination.</p>
-<div class="codehilite"><pre><span></span>BufferedSink b0 = new Buffer();
-BufferedSink b1 = Okio.buffer(b0);
-BufferedSink b2 = Okio.buffer(b1);
-
-b2.writeUtf8(&quot;hello&quot;);
-assertEquals(5, b2.buffer().size());
-assertEquals(0, b1.buffer().size());
-assertEquals(0, b0.buffer().size());
-
-b2.emit();
-assertEquals(0, b2.buffer().size());
-assertEquals(5, b1.buffer().size());
-assertEquals(0, b0.buffer().size());
-
-b1.emit();
-assertEquals(0, b2.buffer().size());
-assertEquals(0, b1.buffer().size());
-assertEquals(5, b0.buffer().size());
-</pre></div>
+<p>(js, jvm, native) <code>fun emit():</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

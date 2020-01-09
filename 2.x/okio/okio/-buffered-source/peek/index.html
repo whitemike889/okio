@@ -338,8 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">peek</a></p>
 <h1 id="peek">peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun peek():</code><a href="../"><code>BufferedSource</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun peek():</code><a href="../"><code>BufferedSource</code></a></p>
 <p>Returns a new <code>BufferedSource</code> that can read data from this <code>BufferedSource</code> without consuming
 it. The returned source becomes invalid once this source is next read or closed.</p>
 <p>For example, we can use <code>peek()</code> to lookahead and read the same data multiple times.</p>

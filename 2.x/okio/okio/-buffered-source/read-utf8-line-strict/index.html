@@ -338,17 +338,22 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">readUtf8LineStrict</a></p>
 <h1 id="readutf8linestrict">readUtf8LineStrict<a class="headerlink" href="#readutf8linestrict" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun readUtf8LineStrict():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8LineStrict():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a>(js)</p>
 <p>Removes and returns characters up to but not including the next line break. A line break is
 either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.</p>
 <p><strong>On the end of the stream this method throws.</strong> Every call must consume either
-&lsquo;\r\n&rsquo; or &lsquo;\n&rsquo;. If these characters are absent in the stream, an <a href="https://docs.oracle.com/javase/8/docs/api/java/io/EOFException.html">java.io.EOFException</a>
+&lsquo;\r\n&rsquo; or &lsquo;\n&rsquo;. If these characters are absent in the stream, an <a href="#">java.io.EOFException</a>
 is thrown. Use this for machine-generated data where a missing line break implies truncated
 input.</p>
-<p><code>abstract fun readUtf8LineStrict(limit:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Like <a href="./">readUtf8LineStrict</a>, except this allows the caller to specify the longest allowed match.
+<p>(jvm)</p>
+<p>Removes and returns characters up to but not including the next line break. A line break is
+either <code>"\n"</code> or <code>"\r\n"</code>; these characters are not included in the result.</p>
+<p><strong>On the end of the stream this method throws.</strong> Every call must consume either
+&lsquo;\r\n&rsquo; or &lsquo;\n&rsquo;. If these characters are absent in the stream, an <a href="https://docs.oracle.com/javase/6/docs/api/java/io/EOFException.html">java.io.EOFException</a>
+is thrown. Use this for machine-generated data where a missing line break implies truncated
+input.</p>
+<p>(js, jvm, native) <code>abstract fun readUtf8LineStrict(limit:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></p>
+<p>Like <a href="./#okio.BufferedSource$readUtf8LineStrict()">readUtf8LineStrict</a>, except this allows the caller to specify the longest allowed match.
 Use this to protect against streams that may not include <code>"\n"</code> or <code>"\r\n"</code>.</p>
 <p>The returned string will have at most <code>limit</code> UTF-8 bytes, and the maximum number of bytes
 scanned is <code>limit + 2</code>. If <code>limit == 0</code> this will always throw an <code>EOFException</code> because no

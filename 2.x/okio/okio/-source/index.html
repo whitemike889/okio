@@ -341,6 +341,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparison-with-inputstream_1" title="Comparison with InputStream" class="md-nav__link">
+    Comparison with InputStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interop-with-inputstream_1" title="Interop with InputStream" class="md-nav__link">
+    Interop with InputStream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#functions" title="Functions" class="md-nav__link">
     Functions
   </a>
@@ -382,29 +396,51 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">Source</a></p>
 <h1 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h1>
-<p><code>expect interface Source</code></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm, native) <code>interface Source</code>(js)</p>
 <p>Supplies a stream of bytes. Use this interface to read data from wherever it&rsquo;s located: from the
 network, storage, or a buffer in memory. Sources may be layered to transform supplied data, such
 as to decompress, decrypt, or remove protocol framing.</p>
-<p>Most applications shouldn&rsquo;t operate on a source directly, but rather on a <a href="../-buffered-source/">BufferedSource</a> which
-is both more efficient and more convenient. Use <a href="../buffer/">buffer</a> to wrap any source with a buffer.</p>
-<p>Sources are easy to test: just use a <a href="../-buffer/">Buffer</a> in your tests, and fill it with the data your
+<p>Most applications shouldn&rsquo;t operate on a source directly, but rather on a <a href="../-buffered-source/#okio.BufferedSource">BufferedSource</a> which
+is both more efficient and more convenient. Use <a href="../buffer/#okio$buffer(okio.Source)">buffer</a> to wrap any source with a buffer.</p>
+<p>Sources are easy to test: just use a <a href="../-buffer/#okio.Buffer">Buffer</a> in your tests, and fill it with the data your
 application is to read.</p>
 <h3 id="comparison-with-inputstream">Comparison with InputStream<a class="headerlink" href="#comparison-with-inputstream" title="Permanent link">&para;</a></h3>
-<p>This interface is functionally equivalent to <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">java.io.InputStream</a>.</p>
+<p>This interface is functionally equivalent to <a href="#">java.io.InputStream</a>.</p>
 <p><code>InputStream</code> requires multiple layers when consumed data is heterogeneous: a <code>DataInputStream</code>
 for primitive values, a <code>BufferedInputStream</code> for buffering, and <code>InputStreamReader</code> for strings.
 This library uses <code>BufferedSource</code> for all of the above.</p>
-<p>Source avoids the impossible-to-implement <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#available()">available()</a> method.
-Instead callers specify how many bytes they <a href="../-buffered-source/require/">require</a>.</p>
-<p>Source omits the unsafe-to-compose <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#mark(int)">mark and reset</a> state that&rsquo;s
+<p>Source avoids the impossible-to-implement <a href="#">available()</a> method.
+Instead callers specify how many bytes they <a href="../-buffered-source/require/#okio.BufferedSource$require(kotlin.Long)">require</a>.</p>
+<p>Source omits the unsafe-to-compose <a href="#">mark and reset</a> state that&rsquo;s
 tracked by <code>InputStream</code>; instead, callers just buffer what they need.</p>
-<p>When implementing a source, you don&rsquo;t need to worry about the <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#read()">read()</a>
+<p>When implementing a source, you don&rsquo;t need to worry about the <a href="#">read()</a>
 method that is awkward to implement efficiently and returns one of 257 possible values.</p>
-<p>And source has a stronger <code>skip</code> method: <a href="../-buffered-source/skip/">BufferedSource.skip</a> won&rsquo;t return prematurely.</p>
+<p>And source has a stronger <code>skip</code> method: <a href="../-buffered-source/skip/#okio.BufferedSource$skip(kotlin.Long)">BufferedSource.skip</a> won&rsquo;t return prematurely.</p>
 <h3 id="interop-with-inputstream">Interop with InputStream<a class="headerlink" href="#interop-with-inputstream" title="Permanent link">&para;</a></h3>
 <p>Use <a href="#">source</a> to adapt an <code>InputStream</code> to a source. Use <a href="#">BufferedSource.inputStream</a> to adapt a
+source to an <code>InputStream</code>.</p>
+<p>(jvm)</p>
+<p>Supplies a stream of bytes. Use this interface to read data from wherever it&rsquo;s located: from the
+network, storage, or a buffer in memory. Sources may be layered to transform supplied data, such
+as to decompress, decrypt, or remove protocol framing.</p>
+<p>Most applications shouldn&rsquo;t operate on a source directly, but rather on a <a href="../-buffered-source/#okio.BufferedSource">BufferedSource</a> which
+is both more efficient and more convenient. Use <a href="../buffer/#okio$buffer(okio.Source)">buffer</a> to wrap any source with a buffer.</p>
+<p>Sources are easy to test: just use a <a href="../-buffer/#okio.Buffer">Buffer</a> in your tests, and fill it with the data your
+application is to read.</p>
+<h3 id="comparison-with-inputstream_1">Comparison with InputStream<a class="headerlink" href="#comparison-with-inputstream_1" title="Permanent link">&para;</a></h3>
+<p>This interface is functionally equivalent to <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">java.io.InputStream</a>.</p>
+<p><code>InputStream</code> requires multiple layers when consumed data is heterogeneous: a <code>DataInputStream</code>
+for primitive values, a <code>BufferedInputStream</code> for buffering, and <code>InputStreamReader</code> for strings.
+This library uses <code>BufferedSource</code> for all of the above.</p>
+<p>Source avoids the impossible-to-implement <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html#available()">available()</a> method.
+Instead callers specify how many bytes they <a href="../-buffered-source/require/#okio.BufferedSource$require(kotlin.Long)">require</a>.</p>
+<p>Source omits the unsafe-to-compose <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html#mark(int)">mark and reset</a> state that&rsquo;s
+tracked by <code>InputStream</code>; instead, callers just buffer what they need.</p>
+<p>When implementing a source, you don&rsquo;t need to worry about the <a href="https://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html#read()">read()</a>
+method that is awkward to implement efficiently and returns one of 257 possible values.</p>
+<p>And source has a stronger <code>skip</code> method: <a href="../-buffered-source/skip/#okio.BufferedSource$skip(kotlin.Long)">BufferedSource.skip</a> won&rsquo;t return prematurely.</p>
+<h3 id="interop-with-inputstream_1">Interop with InputStream<a class="headerlink" href="#interop-with-inputstream_1" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../java.io.-input-stream/source/">source</a> to adapt an <code>InputStream</code> to a source. Use <a href="../-buffered-source/input-stream/">BufferedSource.inputStream</a> to adapt a
 source to an <code>InputStream</code>.</p>
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
 <table>
@@ -416,16 +452,16 @@ source to an <code>InputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="close/">close</a></td>
-<td><code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Closes this source and releases the resources held by this source. It is an error to read a closed source. It is safe to close a source more than once.</td>
+<td>(js, jvm, native) <a href="close/">close</a></td>
+<td>Closes this source and releases the resources held by this source. It is an error to read a closed source. It is safe to close a source more than once.<code>abstract fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="read/">read</a></td>
-<td><code>abstract fun read(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><br>Removes at least 1, and up to <code>byteCount</code> bytes from this and appends them to <code>sink</code>. Returns the number of bytes read, or -1 if this source is exhausted.</td>
+<td>(js, jvm, native) <a href="read/">read</a></td>
+<td>Removes at least 1, and up to <code>byteCount</code> bytes from this and appends them to <code>sink</code>. Returns the number of bytes read, or -1 if this source is exhausted.<code>abstract fun read(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout/">timeout</a></td>
-<td><code>abstract fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a><br>Returns the timeout for this source.</td>
+<td>(js, jvm, native) <a href="timeout/">timeout</a></td>
+<td>Returns the timeout for this source.<code>abstract fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -439,16 +475,12 @@ source to an <code>InputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="./"><code>Source</code></a><code>.buffer():</code><a href="../-buffered-source/"><code>BufferedSource</code></a><br>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="./#okio.Source">Source</a> while reading.<code>fun</code><a href="./"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a></td>
 </tr>
 <tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="./"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a><br>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="./">Source</a> while reading.</td>
-</tr>
-<tr>
-<td><a href="../inflate/">inflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="./"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a><br>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="./">Source</a> while reading.</td>
+<td>(jvm) <a href="../inflate/">inflate</a></td>
+<td>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="./#okio.Source">Source</a> while reading.<code>fun</code><a href="./"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -462,20 +494,20 @@ source to an <code>InputStream</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../-buffered-source/">BufferedSource</a><br>(JVM, js, native)</td>
-<td><code>expect interface BufferedSource :</code><a href="./"><code>Source</code></a><br>A source that keeps a buffer internally so that callers can do small reads without a performance penalty. It also allows clients to read ahead, buffering as much as necessary before consuming input.</td>
+<td>(js, jvm, native) <a href="../-buffered-source/">BufferedSource</a></td>
+<td>A source that keeps a buffer internally so that callers can do small reads without a performance penalty. It also allows clients to read ahead, buffering as much as necessary before consuming input.<code>interface BufferedSource :</code><a href="./"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="../-forwarding-source/">ForwardingSource</a><br>(JVM)</td>
-<td><code>abstract class ForwardingSource :</code><a href="./"><code>Source</code></a><br>A <a href="./">Source</a> which forwards calls to another. Useful for subclassing.</td>
+<td>(jvm) <a href="../-forwarding-source/">ForwardingSource</a></td>
+<td>A <a href="./#okio.Source">Source</a> which forwards calls to another. Useful for subclassing.<code>abstract class ForwardingSource :</code><a href="./"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="../-gzip-source/">GzipSource</a><br>(JVM)</td>
-<td><code>class GzipSource :</code><a href="./"><code>Source</code></a><br>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.</td>
+<td>(jvm) <a href="../-gzip-source/">GzipSource</a></td>
+<td>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.<code>class GzipSource :</code><a href="./"><code>Source</code></a></td>
 </tr>
 <tr>
-<td><a href="../-inflater-source/">InflaterSource</a><br>(JVM)</td>
-<td><code>class InflaterSource :</code><a href="./"><code>Source</code></a><br>A source that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to decompress data read from another source.</td>
+<td>(jvm) <a href="../-inflater-source/">InflaterSource</a></td>
+<td>A source that uses <a href="http://tools.ietf.org/html/rfc1951">DEFLATE</a> to decompress data read from another source.<code>class InflaterSource :</code><a href="./"><code>Source</code></a></td>
 </tr>
 </tbody>
 </table>

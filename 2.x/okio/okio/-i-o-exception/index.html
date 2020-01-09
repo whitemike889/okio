@@ -361,8 +361,7 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">IOException</a></p>
 <h1 id="ioexception">IOException<a class="headerlink" href="#ioexception" title="Permanent link">&para;</a></h1>
-<p><code>open expect class IOException :</code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html"><code>Exception</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(js, jvm) <code>open class IOException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-exception/index.html"><code>Exception</code></a>(native) <code>open class IOException :</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html"><code>Exception</code></a></p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -373,8 +372,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a><br>(js, native)</td>
-<td><code>IOException(message:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = null)</code></td>
+<td><a href="-init-/">&lt;init&gt;</a></td>
+<td>(js, jvm) <code>&lt;init&gt;(message:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = null)</code><br>(native) <code>&lt;init&gt;(message:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?)</code></td>
 </tr>
 </tbody>
 </table>
@@ -388,8 +387,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../-e-o-f-exception/">EOFException</a><br>(JVM, js, native)</td>
-<td><code>open expect class EOFException :</code><a href="./"><code>IOException</code></a></td>
+<td>(js, jvm, native) <a href="../-e-o-f-exception/">EOFException</a></td>
+<td><code>open class EOFException :</code><a href="./"><code>IOException</code></a></td>
 </tr>
 </tbody>
 </table>

@@ -334,22 +334,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inherited-properties" title="Inherited Properties" class="md-nav__link">
-    Inherited Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#functions" title="Functions" class="md-nav__link">
     Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inherited-functions" title="Inherited Functions" class="md-nav__link">
-    Inherited Functions
   </a>
   
 </li>
@@ -389,12 +375,11 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">HashingSource</a></p>
 <h1 id="hashingsource">HashingSource<a class="headerlink" href="#hashingsource" title="Permanent link">&para;</a></h1>
-<p><code>class HashingSource :</code><a href="../-forwarding-source/"><code>ForwardingSource</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>class HashingSource :</code><a href="../-forwarding-source/"><code>ForwardingSource</code></a></p>
 <p>A source that computes a hash of the full stream of bytes it has supplied. To use, create an
 instance with your preferred hash algorithm. Exhaust the source by reading all of its bytes and
-then call <a href="#">hash</a> to compute the final hash value.</p>
-<p>In this example we use <code>HashingSource</code> with a <a href="../-buffered-source/">BufferedSource</a> to make reading
+then call <a href="hash/">hash</a> to compute the final hash value.</p>
+<p>In this example we use <code>HashingSource</code> with a <a href="../-buffered-source/#okio.BufferedSource">BufferedSource</a> to make reading
 from the source easier.</p>
 <div class="codehilite"><pre><span></span>HashingSource hashingSource = HashingSource.sha256(rawSource);
 BufferedSource bufferedSource = Okio.buffer(hashingSource);
@@ -414,23 +399,8 @@ ByteString hash = hashingSource.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="hash/">hash</a></td>
-<td><code>val hash:</code><a href="../-byte-string/"><code>ByteString</code></a><br>Returns the hash of the bytes supplied thus far and resets the internal state of this source.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-properties">Inherited Properties<a class="headerlink" href="#inherited-properties" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-forwarding-source/delegate/">delegate</a><br>(JVM)</td>
-<td><code>val delegate:</code><a href="../-source/"><code>Source</code></a><br><a href="../-source/">Source</a> to which this instance is delegating.</td>
+<td>(jvm) <a href="hash/">hash</a></td>
+<td>Returns the hash of the bytes supplied thus far and resets the internal state of this source.<code>val hash:</code><a href="../-byte-string/"><code>ByteString</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -444,31 +414,12 @@ ByteString hash = hashingSource.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="read/">read</a></td>
+<td>(jvm) <a href="hash/">hash</a></td>
+<td><code>fun ~~hash~~():</code><a href="../-byte-string/"><code>ByteString</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="read/">read</a></td>
 <td><code>fun read(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-functions">Inherited Functions<a class="headerlink" href="#inherited-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-forwarding-source/close/">close</a><br>(JVM)</td>
-<td><code>open fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
-</tr>
-<tr>
-<td><a href="../-forwarding-source/timeout/">timeout</a><br>(JVM)</td>
-<td><code>open fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
-</tr>
-<tr>
-<td><a href="../-forwarding-source/to-string/">toString</a><br>(JVM)</td>
-<td><code>open fun toString():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -482,32 +433,32 @@ ByteString hash = hashingSource.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="hmac-sha1/">hmacSha1</a></td>
-<td><code>fun hmacSha1(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the obsolete SHA-1 HMAC algorithm to produce 160-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha1/">hmacSha1</a></td>
+<td>Returns a sink that uses the obsolete SHA-1 HMAC algorithm to produce 160-bit hashes.<code>fun hmacSha1(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="hmac-sha256/">hmacSha256</a></td>
-<td><code>fun hmacSha256(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the SHA-256 HMAC algorithm to produce 256-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha256/">hmacSha256</a></td>
+<td>Returns a sink that uses the SHA-256 HMAC algorithm to produce 256-bit hashes.<code>fun hmacSha256(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="hmac-sha512/">hmacSha512</a></td>
-<td><code>fun hmacSha512(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the SHA-512 HMAC algorithm to produce 512-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha512/">hmacSha512</a></td>
+<td>Returns a sink that uses the SHA-512 HMAC algorithm to produce 512-bit hashes.<code>fun hmacSha512(source:</code><a href="../-source/"><code>Source</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="md5/">md5</a></td>
-<td><code>fun md5(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the obsolete MD5 hash algorithm to produce 128-bit hashes.</td>
+<td>(jvm) <a href="md5/">md5</a></td>
+<td>Returns a sink that uses the obsolete MD5 hash algorithm to produce 128-bit hashes.<code>fun md5(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="sha1/">sha1</a></td>
-<td><code>fun sha1(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the obsolete SHA-1 hash algorithm to produce 160-bit hashes.</td>
+<td>(jvm) <a href="sha1/">sha1</a></td>
+<td>Returns a sink that uses the obsolete SHA-1 hash algorithm to produce 160-bit hashes.<code>fun sha1(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="sha256/">sha256</a></td>
-<td><code>fun sha256(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the SHA-256 hash algorithm to produce 256-bit hashes.</td>
+<td>(jvm) <a href="sha256/">sha256</a></td>
+<td>Returns a sink that uses the SHA-256 hash algorithm to produce 256-bit hashes.<code>fun sha256(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 <tr>
-<td><a href="sha512/">sha512</a></td>
-<td><code>fun sha512(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a><br>Returns a sink that uses the SHA-512 hash algorithm to produce 512-bit hashes.</td>
+<td>(jvm) <a href="sha512/">sha512</a></td>
+<td>Returns a sink that uses the SHA-512 hash algorithm to produce 512-bit hashes.<code>fun sha512(source:</code><a href="../-source/"><code>Source</code></a><code>):</code><a href="./"><code>HashingSource</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -521,16 +472,12 @@ ByteString hash = hashingSource.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="../-source/"><code>Source</code></a><code>.buffer():</code><a href="../-buffered-source/"><code>BufferedSource</code></a><br>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a></td>
 </tr>
 <tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="../-gzip-source/"><code>GzipSource</code></a><br>Returns a <a href="../-gzip-source/">GzipSource</a> that gzip-decompresses this <a href="../-source/">Source</a> while reading.</td>
-</tr>
-<tr>
-<td><a href="../inflate/">inflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a><br>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/">Source</a> while reading.</td>
+<td>(jvm) <a href="../inflate/">inflate</a></td>
+<td>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a></td>
 </tr>
 </tbody>
 </table>

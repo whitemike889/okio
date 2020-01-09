@@ -354,8 +354,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">GzipSink</a> / <a href="./">&lt;init&gt;</a></p>
 <h1 id="init">&lt;init&gt;<a class="headerlink" href="#init" title="Permanent link">&para;</a></h1>
-<p><code>GzipSink(sink:</code><a href="../../-sink/"><code>Sink</code></a><code>)</code></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>GzipSink(sink:</code><a href="../../-sink/"><code>Sink</code></a><code>)</code></p>
 <p>A sink that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to
 compress written data to another sink.</p>
 <h3 id="sync-flush">Sync flush<a class="headerlink" href="#sync-flush" title="Permanent link">&para;</a></h3>
@@ -363,7 +362,7 @@ compress written data to another sink.</p>
 call to <a href="../flush/">flush</a> immediately compresses all currently-buffered data;
 this early compression may be less effective than compression performed
 without flushing.</p>
-<p>This is equivalent to using <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html">Deflater</a> with the sync flush option.
+<p>This is equivalent to using <a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html">Deflater</a> with the sync flush option.
 This class does not offer any partial flush mechanism. For best performance,
 only call <a href="../flush/">flush</a> when application behavior requires it.</p>
                 

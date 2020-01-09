@@ -338,11 +338,11 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">BufferedSource</a> / <a href="./">select</a></p>
 <h1 id="select">select<a class="headerlink" href="#select" title="Permanent link">&para;</a></h1>
-<p><code>abstract fun select(options:</code><a href="../../-options/"><code>Options</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></p>
+<p>(js, jvm) <code>abstract fun select(options:</code><a href="../../-options/"><code>Options</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></p>
 <p>Finds the first string in <code>options</code> that is a prefix of this buffer, consumes it from this
 buffer, and returns its index. If no byte string in <code>options</code> is a prefix of this buffer this
 returns -1 and no bytes are consumed.</p>
-<p>This can be used as an alternative to <a href="../read-byte-string/">readByteString</a> or even <a href="../read-utf8/">readUtf8</a> if the set of
+<p>This can be used as an alternative to <a href="../read-byte-string/#okio.BufferedSource$readByteString()">readByteString</a> or even <a href="../read-utf8/#okio.BufferedSource$readUtf8()">readUtf8</a> if the set of
 expected values is known in advance.</p>
 <div class="codehilite"><pre><span></span>Options FIELDS = Options.of(
     ByteString.encodeUtf8(&quot;depth=&quot;),
@@ -361,8 +361,7 @@ assertEquals(480, buffer.readDecimalLong());
 assertEquals(&#39;\n&#39;, buffer.readByte());
 </pre></div>
 
-<p><code>abstract actual fun select(options: &lt;ERROR CLASS&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
+<p>(native) <code>abstract fun select(options: &lt;ERROR CLASS&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></p>
                 
                   
                 

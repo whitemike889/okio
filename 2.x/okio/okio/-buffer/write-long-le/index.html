@@ -338,33 +338,7 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">Buffer</a> / <a href="./">writeLongLe</a></p>
 <h1 id="writelongle">writeLongLe<a class="headerlink" href="#writelongle" title="Permanent link">&para;</a></h1>
-<p><code>fun writeLongLe(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
-<p>Overrides <a href="../../-buffered-sink/write-long-le/">BufferedSink.writeLongLe</a></p>
-<p><strong>Platform and version requirements:</strong> JVM, js, native</p>
-<p>Writes a little-endian long to this sink using eight bytes.</p>
-<div class="codehilite"><pre><span></span>Buffer buffer = new Buffer();
-buffer.writeLongLe(9223372036854775807L);
-buffer.writeLongLe(15);
-
-assertEquals(16, buffer.size());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0xff, buffer.readByte());
-assertEquals((byte) 0x7f, buffer.readByte());
-assertEquals((byte) 0x0f, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals((byte) 0x00, buffer.readByte());
-assertEquals(0, buffer.size());
-</pre></div>
+<p>(js, jvm, native) <code>fun writeLongLe(v:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="../"><code>Buffer</code></a></p>
                 
                   
                 

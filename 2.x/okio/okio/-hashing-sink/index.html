@@ -334,22 +334,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inherited-properties" title="Inherited Properties" class="md-nav__link">
-    Inherited Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#functions" title="Functions" class="md-nav__link">
     Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inherited-functions" title="Inherited Functions" class="md-nav__link">
-    Inherited Functions
   </a>
   
 </li>
@@ -389,12 +375,11 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">HashingSink</a></p>
 <h1 id="hashingsink">HashingSink<a class="headerlink" href="#hashingsink" title="Permanent link">&para;</a></h1>
-<p><code>class HashingSink :</code><a href="../-forwarding-sink/"><code>ForwardingSink</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>class HashingSink :</code><a href="../-forwarding-sink/"><code>ForwardingSink</code></a></p>
 <p>A sink that computes a hash of the full stream of bytes it has accepted. To use, create an
 instance with your preferred hash algorithm. Write all of the data to the sink and then call
-<a href="#">hash</a> to compute the final hash value.</p>
-<p>In this example we use <code>HashingSink</code> with a <a href="../-buffered-sink/">BufferedSink</a> to make writing to the
+<a href="hash/">hash</a> to compute the final hash value.</p>
+<p>In this example we use <code>HashingSink</code> with a <a href="../-buffered-sink/#okio.BufferedSink">BufferedSink</a> to make writing to the
 sink easier.</p>
 <div class="codehilite"><pre><span></span>HashingSink hashingSink = HashingSink.sha256(s);
 BufferedSink bufferedSink = Okio.buffer(hashingSink);
@@ -414,23 +399,8 @@ ByteString hash = hashingSink.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="hash/">hash</a></td>
-<td><code>val hash:</code><a href="../-byte-string/"><code>ByteString</code></a><br>Returns the hash of the bytes accepted thus far and resets the internal state of this sink.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-properties">Inherited Properties<a class="headerlink" href="#inherited-properties" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-forwarding-sink/delegate/">delegate</a><br>(JVM)</td>
-<td><code>val delegate:</code><a href="../-sink/"><code>Sink</code></a><br><a href="../-sink/">Sink</a> to which this instance is delegating.</td>
+<td>(jvm) <a href="hash/">hash</a></td>
+<td>Returns the hash of the bytes accepted thus far and resets the internal state of this sink.<code>val hash:</code><a href="../-byte-string/"><code>ByteString</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -444,35 +414,12 @@ ByteString hash = hashingSink.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="write/">write</a></td>
+<td>(jvm) <a href="hash/">hash</a></td>
+<td><code>fun ~~hash~~():</code><a href="../-byte-string/"><code>ByteString</code></a></td>
+</tr>
+<tr>
+<td>(jvm) <a href="write/">write</a></td>
 <td><code>fun write(source:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-functions">Inherited Functions<a class="headerlink" href="#inherited-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-forwarding-sink/close/">close</a><br>(JVM)</td>
-<td><code>open fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
-</tr>
-<tr>
-<td><a href="../-forwarding-sink/flush/">flush</a><br>(JVM)</td>
-<td><code>open fun flush():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
-</tr>
-<tr>
-<td><a href="../-forwarding-sink/timeout/">timeout</a><br>(JVM)</td>
-<td><code>open fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
-</tr>
-<tr>
-<td><a href="../-forwarding-sink/to-string/">toString</a><br>(JVM)</td>
-<td><code>open fun toString():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -486,32 +433,32 @@ ByteString hash = hashingSink.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="hmac-sha1/">hmacSha1</a></td>
-<td><code>fun hmacSha1(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the obsolete SHA-1 HMAC algorithm to produce 160-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha1/">hmacSha1</a></td>
+<td>Returns a sink that uses the obsolete SHA-1 HMAC algorithm to produce 160-bit hashes.<code>fun hmacSha1(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="hmac-sha256/">hmacSha256</a></td>
-<td><code>fun hmacSha256(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the SHA-256 HMAC algorithm to produce 256-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha256/">hmacSha256</a></td>
+<td>Returns a sink that uses the SHA-256 HMAC algorithm to produce 256-bit hashes.<code>fun hmacSha256(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="hmac-sha512/">hmacSha512</a></td>
-<td><code>fun hmacSha512(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the SHA-512 HMAC algorithm to produce 512-bit hashes.</td>
+<td>(jvm) <a href="hmac-sha512/">hmacSha512</a></td>
+<td>Returns a sink that uses the SHA-512 HMAC algorithm to produce 512-bit hashes.<code>fun hmacSha512(sink:</code><a href="../-sink/"><code>Sink</code></a><code>, key:</code><a href="../-byte-string/"><code>ByteString</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="md5/">md5</a></td>
-<td><code>fun md5(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the obsolete MD5 hash algorithm to produce 128-bit hashes.</td>
+<td>(jvm) <a href="md5/">md5</a></td>
+<td>Returns a sink that uses the obsolete MD5 hash algorithm to produce 128-bit hashes.<code>fun md5(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="sha1/">sha1</a></td>
-<td><code>fun sha1(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the obsolete SHA-1 hash algorithm to produce 160-bit hashes.</td>
+<td>(jvm) <a href="sha1/">sha1</a></td>
+<td>Returns a sink that uses the obsolete SHA-1 hash algorithm to produce 160-bit hashes.<code>fun sha1(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="sha256/">sha256</a></td>
-<td><code>fun sha256(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the SHA-256 hash algorithm to produce 256-bit hashes.</td>
+<td>(jvm) <a href="sha256/">sha256</a></td>
+<td>Returns a sink that uses the SHA-256 hash algorithm to produce 256-bit hashes.<code>fun sha256(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 <tr>
-<td><a href="sha512/">sha512</a></td>
-<td><code>fun sha512(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a><br>Returns a sink that uses the SHA-512 hash algorithm to produce 512-bit hashes.</td>
+<td>(jvm) <a href="sha512/">sha512</a></td>
+<td>Returns a sink that uses the SHA-512 hash algorithm to produce 512-bit hashes.<code>fun sha512(sink:</code><a href="../-sink/"><code>Sink</code></a><code>):</code><a href="./"><code>HashingSink</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -525,16 +472,12 @@ ByteString hash = hashingSink.hash();
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="../-sink/"><code>Sink</code></a><code>.buffer():</code><a href="../-buffered-sink/"><code>BufferedSink</code></a><br>Returns a new sink that buffers writes to <code>sink</code>. The returned sink will batch writes to <code>sink</code>. Use this wherever you write to a sink to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../deflate/">deflate</a></td>
+<td>Returns an <a href="../-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="../-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="../-deflater-sink/"><code>DeflaterSink</code></a></td>
 </tr>
 <tr>
-<td><a href="../deflate/">deflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.deflate(deflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Deflater.html"><code>Deflater</code></a><code>= Deflater()):</code><a href="../-deflater-sink/"><code>DeflaterSink</code></a><br>Returns an <a href="../-deflater-sink/">DeflaterSink</a> that DEFLATE-compresses data to this <a href="../-sink/">Sink</a> while writing.</td>
-</tr>
-<tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a><br>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="../-sink/">Sink</a> while writing.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="../-gzip-sink/">GzipSink</a> that gzip-compresses to this <a href="../-sink/#okio.Sink">Sink</a> while writing.<code>fun</code><a href="../-sink/"><code>Sink</code></a><code>.gzip():</code><a href="../-gzip-sink/"><code>GzipSink</code></a></td>
 </tr>
 </tbody>
 </table>

@@ -368,8 +368,7 @@
                 
                 <p><a href="../../">okio</a> / <a href="../">okio</a> / <a href="./">GzipSource</a></p>
 <h1 id="gzipsource">GzipSource<a class="headerlink" href="#gzipsource" title="Permanent link">&para;</a></h1>
-<p><code>class GzipSource :</code><a href="../-source/"><code>Source</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>class GzipSource :</code><a href="../-source/"><code>Source</code></a></p>
 <p>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to
 decompress data read from another source.</p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
@@ -382,8 +381,8 @@ decompress data read from another source.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>GzipSource(source:</code><a href="../-source/"><code>Source</code></a><code>)</code><br>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.</td>
+<td>(jvm) <a href="-init-/">&lt;init&gt;</a></td>
+<td>A source that uses <a href="http://www.ietf.org/rfc/rfc1952.txt">GZIP</a> to decompress data read from another source.<code>GzipSource(source:</code><a href="../-source/"><code>Source</code></a><code>)</code></td>
 </tr>
 </tbody>
 </table>
@@ -397,15 +396,15 @@ decompress data read from another source.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="close/">close</a></td>
+<td>(jvm) <a href="close/">close</a></td>
 <td><code>fun close():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 <tr>
-<td><a href="read/">read</a></td>
+<td>(jvm) <a href="read/">read</a></td>
 <td><code>fun read(sink:</code><a href="../-buffer/"><code>Buffer</code></a><code>, byteCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a></td>
 </tr>
 <tr>
-<td><a href="timeout/">timeout</a></td>
+<td>(jvm) <a href="timeout/">timeout</a></td>
 <td><code>fun timeout():</code><a href="../-timeout/"><code>Timeout</code></a></td>
 </tr>
 </tbody>
@@ -420,16 +419,12 @@ decompress data read from another source.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../buffer/">buffer</a><br>(JVM, js, native)</td>
-<td><code>expect fun</code><a href="../-source/"><code>Source</code></a><code>.buffer():</code><a href="../-buffered-source/"><code>BufferedSource</code></a><br>Returns a new source that buffers reads from <code>source</code>. The returned source will perform bulk reads into its in-memory buffer. Use this wherever you read a source to get an ergonomic and efficient access to data.</td>
+<td>(jvm) <a href="../gzip/">gzip</a></td>
+<td>Returns a <a href="./">GzipSource</a> that gzip-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="./"><code>GzipSource</code></a></td>
 </tr>
 <tr>
-<td><a href="../gzip/">gzip</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.gzip():</code><a href="./"><code>GzipSource</code></a><br>Returns a <a href="./">GzipSource</a> that gzip-decompresses this <a href="../-source/">Source</a> while reading.</td>
-</tr>
-<tr>
-<td><a href="../inflate/">inflate</a><br>(JVM)</td>
-<td><code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a><br>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/">Source</a> while reading.</td>
+<td>(jvm) <a href="../inflate/">inflate</a></td>
+<td>Returns an <a href="../-inflater-source/">InflaterSource</a> that DEFLATE-decompresses this <a href="../-source/#okio.Source">Source</a> while reading.<code>fun</code><a href="../-source/"><code>Source</code></a><code>.inflate(inflater:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/util/zip/Inflater.html"><code>Inflater</code></a><code>= Inflater()):</code><a href="../-inflater-source/"><code>InflaterSource</code></a></td>
 </tr>
 </tbody>
 </table>

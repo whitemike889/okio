@@ -338,11 +338,12 @@
                 
                 <p><a href="../../../">okio</a> / <a href="../../">okio</a> / <a href="../">HashingSource</a> / <a href="./">hash</a></p>
 <h1 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h1>
-<p><code>val hash:</code><a href="../../-byte-string/"><code>ByteString</code></a></p>
-<p><strong>Platform and version requirements:</strong> JVM</p>
+<p>(jvm) <code>val hash:</code><a href="../../-byte-string/"><code>ByteString</code></a></p>
 <p>Returns the hash of the bytes supplied thus far and resets the internal state of this source.</p>
 <p><strong>Warning:</strong> This method is not idempotent. Each time this method is called its
 internal state is cleared. This starts a new hash with zero bytes supplied.</p>
+<p>(jvm) <code>@JvmName("-deprecated_hash") fun ~~hash~~():</code><a href="../../-byte-string/"><code>ByteString</code></a>
+<strong>Deprecated:</strong> moved to val</p>
                 
                   
                 
